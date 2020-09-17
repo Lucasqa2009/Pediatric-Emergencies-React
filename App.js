@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/screens/Home';
+import Subcategoria from './src/screens/SubCategoria';
+
 import {
   SafeAreaView,
   StyleSheet,
@@ -26,8 +28,9 @@ export default class App extends Component{
   render() {
     return(
       <NavigationContainer style={styles.container}>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={Home}/>
+          <Stack.Screen name="Subcategoria" component={Subcategoria}/>
         </Stack.Navigator>
       </NavigationContainer>
     );

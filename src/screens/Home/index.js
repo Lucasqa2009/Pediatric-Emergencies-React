@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Button} from 'react-native';
 
-function Categoria(){
+function Categoria({ props, name }){
+    let pagina = name;
     return(
-        <View style={styles.boxCategorias}></View>
+        <View style={styles.boxCategorias}>
+            <Button title = "Subcategoria"
+                onPress={() => props.navigate(pagina)}
+            />
+        </View>
     );
 }
 
-export default class Home extends Component{
-    render() {
-        return (
-            <View style={styles.container}>
-                <View style={styles.containerCategorias}>
-                    <Categoria></Categoria>
-                    <Categoria></Categoria>
-                    <Categoria></Categoria>
-                    <Categoria></Categoria>
-                    <Categoria></Categoria>
-                    <Categoria></Categoria>
-                    <Categoria></Categoria>
-                    <Categoria></Categoria>
-                </View>
-            </View>
-        );
-    }
+export default function Home({ navigation }) {
+    return (
+        <View style={styles.container}>
+            <ScrollView contentContainerStyle={styles.containerCategoriasScroll}
+            style={styles.containerCategorias}>
+                <Categoria props={navigation} name='Subcategoria'></Categoria>
+                <Categoria></Categoria>
+                <Categoria></Categoria>
+                <Categoria></Categoria>
+                <Categoria></Categoria>
+                <Categoria></Categoria>
+                <Categoria></Categoria>
+                <Categoria></Categoria>
+            </ScrollView>
+        </View>
+    );
 }
 
 const styles=StyleSheet.create({
@@ -33,18 +37,22 @@ const styles=StyleSheet.create({
       backgroundColor: "#F47F7E"
     },
     containerCategorias: {
+        width: 300,
+        height: 200,
+        backgroundColor: "#58585E",
+        marginBottom: 200
+    },
+    containerCategoriasScroll: {
         flexDirection: 'row',
         flexWrap: "wrap",
-        width:'80%',
-        height: '80%',
-        backgroundColor: "#58585E",
-        justifyContent: "space-between",
-        marginBottom: 40
+        justifyContent: "space-between"
     },
     boxCategorias: {
         width:140,
         height:140,
         backgroundColor: "#8F8F8F",
-        borderRadius: 8
+        borderRadius: 8,
+        marginBottom: 20,
+        elevation:10,
     }
   })
