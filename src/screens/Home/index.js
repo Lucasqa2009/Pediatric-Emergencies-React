@@ -1,30 +1,31 @@
 import React, { Component } from 'react';
-import {View, Text, StyleSheet, ScrollView, Button} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
+import { ceil } from 'react-native-reanimated';
 
-function Categoria({ props, name }){
-    let pagina = name;
+function Categoria({ props, page, name }){
     return(
-        <View style={styles.boxCategorias}>
-            <Button title = "Subcategoria"
-                onPress={() => props.navigate(pagina)}
-            />
-        </View>
+        <TouchableOpacity                           /* This is a button */
+            style={styles.buttonBox}
+            onPress={() => props.navigate(page)}    /**When pressed, navigate to 'page' screen */
+        >
+            <Text style={styles.buttonBoxText}>{name}</Text>
+        </TouchableOpacity>
     );
 }
 
 export default function Home({ navigation }) {
     return (
         <View style={styles.container}>
-            <ScrollView contentContainerStyle={styles.containerCategoriasScroll}
-            style={styles.containerCategorias}>
-                <Categoria props={navigation} name='Subcategoria'></Categoria>
-                <Categoria></Categoria>
-                <Categoria></Categoria>
-                <Categoria></Categoria>
-                <Categoria></Categoria>
-                <Categoria></Categoria>
-                <Categoria></Categoria>
-                <Categoria></Categoria>
+            <ScrollView contentContainerStyle={styles.containerCategoryScroll}
+                style={styles.containerCategory}
+            >
+                <Categoria props={navigation} page='Subcategoria' name='Parada Cardíaca e Respiratória (?)'/>
+                <Categoria props={navigation} page='Subcategoria' name='Queimaduras'/>
+                <Categoria props={navigation} page='Subcategoria' name='Quedas'/>
+                <Categoria props={navigation} page='Subcategoria' name='Afogamento'/>
+                <Categoria props={navigation} page='Subcategoria' name='Engasgo e Sufocamento'/>
+                <Categoria props={navigation} page='Subcategoria' name='Choques Elétricos'/>
+                <Categoria props={navigation} page='Subcategoria' name='Intoxicação Exógena'/>
             </ScrollView>
         </View>
     );
@@ -36,23 +37,34 @@ const styles=StyleSheet.create({
       alignItems: "center",
       backgroundColor: "#F47F7E"
     },
-    containerCategorias: {
-        width: 300,
-        height: 200,
+
+    containerCategory: {              /* search for "contentContainerStyle stackoverflow" */
+        width: '90%',
+        height: '61%',
         backgroundColor: "#58585E",
-        marginBottom: 200
     },
-    containerCategoriasScroll: {
+    containerCategoryScroll: {
+        paddingHorizontal:'3%',
         flexDirection: 'row',
         flexWrap: "wrap",
         justifyContent: "space-between"
     },
-    boxCategorias: {
-        width:140,
-        height:140,
+
+    buttonBox: {
+        width:'46%',
+        height:160,                        /*NOT RESPONSIVE*/
         backgroundColor: "#8F8F8F",
         borderRadius: 8,
         marginBottom: 20,
         elevation:10,
+
+        justifyContent: "flex-end"      /*MAKES TEXT AT THE BOTTOM' BOX*/
+    },
+    buttonBoxText: {
+        fontSize: 18,
+        fontFamily: 'Poppins-Regular',
+        paddingBottom: 4,
+        paddingLeft: 10,
+        lineHeight:20
     }
   })
