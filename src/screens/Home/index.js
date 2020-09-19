@@ -35,13 +35,13 @@ const styles=StyleSheet.create({
     container: {
       flex: 1,
       alignItems: "center",
-      backgroundColor: "#F47F7E"
+      backgroundColor: "#F4FFFE"        /**F47F7E */
     },
 
     containerCategory: {              /* search for "contentContainerStyle stackoverflow" */
         width: '90%',
         height: '61%',
-        backgroundColor: "#58585E",
+        backgroundColor: "#F4FFFE",     /**58585E */
     },
     containerCategoryScroll: {
         paddingHorizontal:'3%',
@@ -53,7 +53,7 @@ const styles=StyleSheet.create({
     buttonBox: {
         width:'46%',
         height:160,                        /*NOT RESPONSIVE*/
-        backgroundColor: "#8F8F8F",
+        backgroundColor: "#AADAE5",     /**8F8F8F */
         borderRadius: 8,
         marginBottom: 20,
         elevation:10,
