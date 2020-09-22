@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/screens/Home';
 import Subcategoria from './src/screens/SubCategoria';
+import PassoAPasso from './src/screens/PassoaPasso'
 
 import {
   SafeAreaView,
@@ -28,9 +29,31 @@ export default class App extends Component{
   render() {
     return(
       <NavigationContainer style={styles.container}>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={Home}/>
-          <Stack.Screen name="Subcategoria" component={Subcategoria}/>
+        <Stack.Navigator initialRouteName="PassoAPasso">
+          <Stack.Screen
+            name="Home" 
+            component={Home}            
+          />
+          <Stack.Screen
+            name="Subcategoria" 
+            component={Subcategoria}
+          />
+          <Stack.Screen 
+            name="PassoAPasso" 
+            component = {PassoAPasso}
+            options={{
+              title: 'Parada Cardiorrespiratória',
+              headerTitleAlign:"center",
+              headerStyle: {
+                backgroundColor: '#22CDCD'
+              },
+              headerTintColor: 'white',
+              headerTitleStyle: {
+                fontWeight: "bold",
+                fontSize: 22,
+              }
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     );
