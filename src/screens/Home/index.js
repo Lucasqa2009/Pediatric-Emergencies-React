@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {View, Text, StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
-import { ceil } from 'react-native-reanimated';
+import {wWidth} from '../../configs/dimensions'
+
+const buttonBoxWidth = (39/100)*wWidth;
 
 function Categoria({ props, page, name }){
     return(
@@ -20,7 +22,7 @@ export default function Home({ navigation }) {
                 <ScrollView contentContainerStyle={styles.containerCategoryScroll}
                     style={styles.containerCategory}
                 >
-                    <Categoria props={navigation} page='Subcategoria' name='Parada Cardíaca e Respiratória (?)'/>
+                    <Categoria props={navigation} page='PassoAPasso' name='Parada Cardíaca e Respiratória'/>
                     <Categoria props={navigation} page='Subcategoria' name='Queimaduras'/>
                     <Categoria props={navigation} page='Subcategoria' name='Quedas'/>
                     <Categoria props={navigation} page='Subcategoria' name='Afogamento'/>
@@ -52,8 +54,8 @@ const styles=StyleSheet.create({
     },
 
     buttonBox: {
-        width:'46%',
-        height:160,                        /*NOT RESPONSIVE*/
+        width:buttonBoxWidth,
+        height:buttonBoxWidth,                        /*NEED TEST RESPONSIVITY*/
         backgroundColor: "#8F8F8F",     /**AADAE5 */
         borderRadius: 8,
         marginBottom: 20,

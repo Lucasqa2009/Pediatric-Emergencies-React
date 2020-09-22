@@ -2,8 +2,11 @@ const { createFactory } = require("react");
 
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import {wWidth} from '../../configs/dimensions'
 
+const containerWidth = (84/100)*wWidth;
 const textPaP1 = "Mantendo a cabeça da criança estendida, envolva, com a sua boca, a boca e nariz da criança e deixe o ar da sua boca passar para a  boca e nariz da criança, evitando soprar na boca da criança por duas vezes. Olhe para o tórax da criança. percebendo se ele se eleva, em caso afirmativo a manobra está correta."
+
 
 
 function PassoAPasso(){
@@ -50,7 +53,7 @@ const styles = StyleSheet.create({
     container: {
         flex:1,
         alignSelf: "center",
-        width: '84%',
+        width: containerWidth,
         backgroundColor: '#F4FFFE'
     },
     tag: {
@@ -71,7 +74,7 @@ const styles = StyleSheet.create({
     },
     containerImage: {
         backgroundColor: '#C4C4C4',
-        height: '33%',
+        height: (19/30)*containerWidth,
         borderRadius: 5,
     },
     textPaP: {
