@@ -4,11 +4,11 @@ import {wWidth} from '../../configs/dimensions'
 
 const buttonBoxWidth = (39/100)*wWidth;
 
-function Categoria({ props, page, name }){
+function Categoria({ props, screen, name }){
     return(
         <TouchableOpacity                           /* This is a button */
             style={styles.buttonBox}
-            onPress={() => props.navigate(page)}    /**When pressed, navigate to 'page' screen */
+            onPress={() => props.navigate(screen)}    /**When pressed, navigate to screen passed as attribute */
         >
             <Text style={styles.buttonBoxText}>{name}</Text>
         </TouchableOpacity>
@@ -22,15 +22,18 @@ export default function Home({ navigation }) {
                 <ScrollView contentContainerStyle={styles.containerCategoryScroll}
                     style={styles.containerCategory}
                 >
-                    <Categoria props={navigation} page='PassoAPasso' name='Parada Cardíaca e Respiratória'/>
-                    <Categoria props={navigation} page='Subcategoria' name='Queimaduras'/>
-                    <Categoria props={navigation} page='Subcategoria' name='Quedas'/>
-                    <Categoria props={navigation} page='Subcategoria' name='Afogamento'/>
-                    <Categoria props={navigation} page='Subcategoria' name='Engasgo e Sufocamento'/>
-                    <Categoria props={navigation} page='Subcategoria' name='Choques Elétricos'/>
-                    <Categoria props={navigation} page='Subcategoria' name='Intoxicação Exógena'/>
+                    <Categoria props={navigation} screen='Subcategoria' name={'Parada\nCardiorrespiratória'}/>
+                    <Categoria props={navigation} screen='Subcategoria' name='Queimaduras'/>
+                    <Categoria props={navigation} screen='Subcategoria' name='Quedas'/>
+                    <Categoria props={navigation} screen='Subcategoria' name='Afogamento'/>
+                    <Categoria props={navigation} screen='Subcategoria' name='Engasgo e Sufocamento'/>
+                    <Categoria props={navigation} screen='Subcategoria' name='Choques Elétricos'/>
+                    <Categoria props={navigation} screen='Subcategoria' name='Intoxicação Exógena'/>
                 </ScrollView>
             </View>
+            <TouchableOpacity>
+                <Text>Informações Importantes</Text>
+            </TouchableOpacity>
         </View>
     );
 }
@@ -66,8 +69,8 @@ const styles=StyleSheet.create({
     buttonBoxText: {
         fontSize: 18,
         fontFamily: 'Poppins-Regular',
+        lineHeight:20,
         paddingBottom: 4,
-        paddingLeft: 10,
-        lineHeight:20
+        textAlign: "center"
     }
   })
