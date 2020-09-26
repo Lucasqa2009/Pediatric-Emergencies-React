@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import {wWidth} from '../../configs/dimensions'
 
 const buttonBoxWidth = (39/100)*wWidth;
 
+/**Mesmo botão da tela Home */
 function ButtonSubCategory({ props, screen, name }){
    return(
        <TouchableOpacity                           /* This is a button */
@@ -14,7 +15,7 @@ function ButtonSubCategory({ props, screen, name }){
        </TouchableOpacity>
    );
 }
-
+/**Mesmo funcionamento da Home, só muda um pouco o CSS */
 function Subcategoria ({navigation}) {
    return(
       <View style={styles.container}>

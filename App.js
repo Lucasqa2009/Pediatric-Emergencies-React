@@ -1,33 +1,27 @@
+/**Essa  é a tela App.js, é a principal do sistema
+ *  e até o momento só serve para alocar as telas.*/
+
+/**Obrigatório para navegação  com o  React Navigation*/
 import 'react-native-gesture-handler';
+
 import React, {Component} from 'react';
+import {  StyleSheet } from 'react-native';
+
+/**Biblioteca de navegação. Container, Navegação em Stack e Navegação por abas inferiores */
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+/**Importando as funções "export defaul" das respectivas telas */
 import Home from './src/screens/Home';
 import AprenderScreen from './src/screens/Aprendizagem';
 import Settings from './src/screens/Settings';
 import Subcategoria from './src/screens/SubCategoria';
 import PassoAPasso from './src/screens/PassoaPasso';
 
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
+/**Variável que possui propriedades para criar a navegação */
 const Tab = createBottomTabNavigator();
-const HomeStack = createStackNavigator();
+const Stack = createStackNavigator();
 
 function HomeStackScreen(){
   return(
@@ -39,20 +33,23 @@ function HomeStackScreen(){
   );
 }
 
+/**A classe(renderiza) "default" ou a função(somente retorna) "default" é o export padrão de cada arquivo (só pode ter um)*/
 export default class App extends Component{
-  render() {
+  render() { 
     return(
-      <NavigationContainer style={styles.container}>
-        <HomeStack.Navigator initialRouteName="Home">
-          <HomeStack.Screen name="Home" component={HomeStackScreen}/>
-          <HomeStack.Screen name="PassoAPasso" component={PassoAPasso}/>
-          <HomeStack.Screen name="Subcategoria" component={Subcategoria}/>
-        </HomeStack.Navigator>
+      <NavigationContainer style={styles.container}> 
+        {/**Aqui abaixo ficam guardadas todas as telas de Stack, toda vez que for para trocar, é chamada pelo "name" em algum evento (botão, por ex.) */}
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={HomeStackScreen}/> 
+          <Stack.Screen name="PassoAPasso" component={PassoAPasso}/>
+          <Stack.Screen name="Subcategoria" component={Subcategoria}/>
+        </Stack.Navigator>
       </NavigationContainer>
     );
   }
 }
 
+/** CSS */
 const styles=StyleSheet.create({
   container: {
     flex: 1,

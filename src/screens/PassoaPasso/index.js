@@ -1,13 +1,12 @@
-const { createFactory } = require("react");
-
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+
 import {wWidth} from '../../configs/dimensions'
 
+/** Variável que guarda o tamanho do body na tela (84% de largura) > ver em ../../configs/dimensions */
 const containerWidth = (84/100)*wWidth;
+
 const textPaP1 = "Mantendo a cabeça da criança estendida, envolva, com a sua boca, a boca e nariz da criança e deixe o ar da sua boca passar para a  boca e nariz da criança, evitando soprar na boca da criança por duas vezes. Olhe para o tórax da criança. percebendo se ele se eleva, em caso afirmativo a manobra está correta."
-
-
 
 function PassoAPasso(){
     return(
@@ -42,9 +41,10 @@ function PassoAPasso(){
 
     );
 }
-
+/**Essa é outra maneira de fazer o export (depois de declarar a função), é uma forma mais clean que do App.js */
 export default PassoAPasso
 
+/**CSS */
 const styles = StyleSheet.create({
     page: {
         flex:1,
@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
         width: containerWidth,
         backgroundColor: '#F4FFFE'
     },
+    /**Conteúdo da página de PaP (Passo a Passo) */
     tag: {
         alignSelf:'center',
         width:'50%',
@@ -85,7 +86,8 @@ const styles = StyleSheet.create({
         paddingTop: 10
     },
 
-    buttonContainer: {
+    /**Botões */
+    buttonContainer: {                                                    /**Responsividade zoadíssima */
         flex:1,
         flexDirection: 'row',
         backgroundColor:"#F4FFFE",
@@ -101,7 +103,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
         elevation: 5
     },
-    countPages: {
+    countPages: {                                                    /**Responsividade zoadíssima */
         backgroundColor:'#22CDCD',
         width: '30%',
         height: '50%',
@@ -109,7 +111,7 @@ const styles = StyleSheet.create({
         textAlignVertical:'center',
         textAlign:'center',
         fontFamily: 'Poppins',
-        fontSize: 30,                               /**Responsividade zoadíssima */
+        fontSize: 30,                              
         paddingTop: 4,
         color: '#4B4B4B'
     }

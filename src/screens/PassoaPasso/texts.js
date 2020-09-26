@@ -1,3 +1,9 @@
+
+
+
+/**ISSO AQUI ERA UMA GAMBIARRA Q EU TAVA FAZENDO,
+ * CASO NÃO DÊ CERTO O NEGÓCIO DO JSON, IGNORA */
+
 import React, { Component } from 'react';
 import {View, Text} from 'react-native';
 
