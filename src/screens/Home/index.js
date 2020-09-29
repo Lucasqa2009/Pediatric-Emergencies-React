@@ -18,22 +18,56 @@ import { ButtonEmergency } from '../../components';
 export default function Home({ navigation }) {
     return (
         <View style={styles.container}>
-            <View style={{ height: '61%' }}        /**Limita o tamanho da ScrollView */>
+            <View style={{ height: '70%', marginTop: 40 }}        /**Limita o tamanho da ScrollView */>
                 <ScrollView
                     /**Uma ScrollView precisa de um estilo de conteúdo e um estilo pro container*/
                     contentContainerStyle={styles.containerCategoryScroll}
                     style={styles.containerCategory}
                 >
-                    <ButtonEmergency props={navigation} screen='Subcategoria' name={'Parada\nCardiorrespiratória'} textLabelSize={14} />
-                    <ButtonEmergency props={navigation} screen='Subcategoria' name='Queimaduras' />
-                    <ButtonEmergency props={navigation} screen='Subcategoria' name='Quedas' />
-                    <ButtonEmergency props={navigation} screen='Subcategoria' name='Afogamento' />
-                    <ButtonEmergency props={navigation} screen='Subcategoria' name='Engasgo e Sufocamento' />
-                    <ButtonEmergency props={navigation} screen='Subcategoria' name='Choques Elétricos' />
+                    <ButtonEmergency
+                        name={'Parada\nCardiorrespiratória'}
+                        props={navigation}
+                        screen='Subcategoria'
+                        textLabelSize={14}
+                        buttonSubVar='prc'
+                    />
+                    <ButtonEmergency
+                        name='Queimaduras'
+                        props={navigation}
+                        screen='Subcategoria'
+                        buttonSubVar='queimaduras'
+                    />
+                    <ButtonEmergency
+                        name='Quedas'
+                        props={navigation}
+                        screen='Subcategoria'
+                        buttonSubVar='quedas'
+                    />
+                    <ButtonEmergency
+                        name='Afogamento'
+                        props={navigation}
+                        screen='Subcategoria'
+                        buttonSubVar='afogamento'
+                    />
+                    <ButtonEmergency
+                        name='Engasgo e Sufocamento'
+                        props={navigation}
+                        screen='Subcategoria'
+                        buttonSubVar='engasgo'
+                    />
+                    <ButtonEmergency
+                        name='Choques Elétricos'
+                        props={navigation}
+                        screen='Subcategoria'
+                        buttonSubVar='choques'
+                    />
                 </ScrollView>
             </View>
-            
-            <ButtonInfoComp props={navigation} />
+
+            <View style={{flex:1, justifyContent:'center'}}>
+                <ButtonInfoComp props={navigation} />
+            </View>
+
         </View>
     );
 }

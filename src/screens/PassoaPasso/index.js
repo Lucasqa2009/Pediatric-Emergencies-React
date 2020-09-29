@@ -1,22 +1,27 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
-import {wWidth} from '../../configs/dimensions'
+import { wWidth } from '../../configs/dimensions'
 
 /** Variável que guarda o tamanho do body na tela (84% de largura) > ver em ../../configs/dimensions */
-const containerWidth = (84/100)*wWidth;
+const containerWidth = (84 / 100) * wWidth;
 
 const textPaP1 = "Classificar a gravidade da vítima: Verifique se a criança está consciente, por meio de estímulos vigorosos e perguntando “Você está me ouvindo?”. Em seguida, coloque dois dedos da mão direita no queixo e a mão esquerda na testa, e estenda o pescoço, para abrir as vias aéreas. Cheque se há respiração e pulso."
 
-function PassoAPasso(){
-    return(
+function PassoAPasso() {
+    return (
         <View style={styles.page}>
             <View style={styles.container}>
                 <View style={styles.tag}><Text style={styles.textTag}>LACTENTE</Text></View>
-                <View style={styles.containerImage}></View>
+                <View style={styles.containerImage}>
+                    <Image
+                        style={styles.image}
+                        source={require('../../../assets/images/PCR1.png')}
+                    />
+                </View>
 
                 <Text style={styles.textPaP}>{textPaP1}</Text>
-                
+
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity style={styles.buttonPaP}>
                         <Image
@@ -36,7 +41,7 @@ function PassoAPasso(){
                 </View>
 
             </View>
-            
+
         </View>
 
     );
@@ -47,25 +52,25 @@ export default PassoAPasso
 /**CSS */
 const styles = StyleSheet.create({
     page: {
-        flex:1,
+        flex: 1,
         backgroundColor: '#F4FFFE'
     },
     container: {
-        flex:1,
+        flex: 1,
         alignSelf: "center",
         width: containerWidth,
         backgroundColor: '#F4FFFE'
     },
     /**Conteúdo da página de PaP (Passo a Passo) */
     tag: {
-        alignSelf:'center',
-        width:'50%',
-        height:'8%',
+        alignSelf: 'center',
+        width: '50%',
+        height: '8%',
         backgroundColor: '#AADAE5',
         marginBottom: 16,
         borderBottomLeftRadius: 8,
         borderBottomRightRadius: 8,
-        justifyContent:'center',
+        justifyContent: 'center',
     },
     textTag: {
         textAlign: "center",
@@ -74,44 +79,49 @@ const styles = StyleSheet.create({
         color: '#4B4B4B'
     },
     containerImage: {
-        backgroundColor: '#C4C4C4',
-        height: (19/30)*containerWidth,
+        /*backgroundColor: '#C4C4C4',*/
+        height: (19 / 30) * containerWidth,
         borderRadius: 5,
+    },
+    image: {
+        width:'100%',
+        height:'100%',
+        resizeMode:"contain"
     },
     textPaP: {
         fontSize: 17,
         fontFamily: 'Poppins-Regular',
-        backgroundColor:"#F4FFFE",
-        height:'40%',
+        backgroundColor: "#F4FFFE",
+        height: '40%',
         paddingTop: 10
     },
 
     /**Botões */
     buttonContainer: {                                                    /**Responsividade zoadíssima */
-        flex:1,
+        flex: 1,
         flexDirection: 'row',
-        backgroundColor:"#F4FFFE",
-        alignItems:'center',
-        justifyContent:'space-between'
+        backgroundColor: "#F4FFFE",
+        alignItems: 'center',
+        justifyContent: 'space-between'
     },
     buttonPaP: {
-        width:'27%',
+        width: '27%',
         height: '75%',
         backgroundColor: '#22CDCD',
         borderRadius: 14,
         justifyContent: "center",
-        alignItems:"center",
+        alignItems: "center",
         elevation: 5
     },
     countPages: {                                                    /**Responsividade zoadíssima */
-        backgroundColor:'#22CDCD',
+        backgroundColor: '#22CDCD',
         width: '30%',
         height: '50%',
         borderRadius: 8,
-        textAlignVertical:'center',
-        textAlign:'center',
+        textAlignVertical: 'center',
+        textAlign: 'center',
         fontFamily: 'Poppins',
-        fontSize: 30,                              
+        fontSize: 30,
         paddingTop: 4,
         color: '#4B4B4B'
     }
