@@ -9,7 +9,7 @@ function Subcategoria({ navigation }) {
       <View style={styles.container}>
          <ButtonEmergency props={navigation} screen="PassoAPasso" name="Menores de 1 ano (lactente)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={ 16 } />
          <ButtonEmergency props={navigation} screen="PassoAPasso" name="Acima de 1 ano até a puberdade (criança)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={ 16 } />
-         <ButtonEmergency props={navigation} screen="PassoAPasso" name="Adolescentes, crianças obesas e adultos" styleExtra={{ marginHorizontal: 10 }} textLabelSize={ 16 } />
+         <ButtonEmergency props={navigation} screen="WinQuiz" name="Adolescentes, crianças obesas e adultos" styleExtra={{ marginHorizontal: 10 }} textLabelSize={ 16 } />
       </View>
    );
 }

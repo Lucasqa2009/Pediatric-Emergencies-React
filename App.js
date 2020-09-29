@@ -18,6 +18,7 @@ import AprenderScreen from './src/screens/Aprendizagem';
 import Settings from './src/screens/Settings';
 import Subcategoria from './src/screens/SubCategoria';
 import PassoAPasso from './src/screens/PassoaPasso';
+import WinQuiz from './src/screens/WinQuiz';
 import Infos from './src/screens/Infos'
 import Sobre from './src/screens/Sobre';
 import Politics from './src/screens/Politics'
@@ -42,10 +43,11 @@ export default class App extends Component {
     return (
       <NavigationContainer style={styles.container}>
         {/**Aqui abaixo ficam guardadas todas as telas de Stack, toda vez que for para trocar, é chamada pelo "name" em algum evento (botão, por ex.) */}
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={HomeStackScreen} />
+        <Stack.Navigator initialRouteName="HomeStack">
+          <Stack.Screen name="HomeStack" component={HomeStackScreen} />
           <Stack.Screen name="PassoAPasso" component={PassoAPasso} />
           <Stack.Screen name="Subcategoria" component={Subcategoria} />
+          <Stack.Screen name="WinQuiz" component={WinQuiz} />
           <Stack.Screen name="Infos" component={Infos} />
           <Stack.Screen name="Politics" component={Politics} />
           <Stack.Screen name="Sobre" component={Sobre} />

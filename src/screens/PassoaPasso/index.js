@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
 
 import {wWidth} from '../../configs/dimensions'
 
 /** Variável que guarda o tamanho do body na tela (84% de largura) > ver em ../../configs/dimensions */
 const containerWidth = (84/100)*wWidth;
 
-const textPaP1 = "Mantendo a cabeça da criança estendida, envolva, com a sua boca, a boca e nariz da criança e deixe o ar da sua boca passar para a  boca e nariz da criança, evitando soprar na boca da criança por duas vezes. Olhe para o tórax da criança. percebendo se ele se eleva, em caso afirmativo a manobra está correta."
+const textPaP1 = "Classificar a gravidade da vítima: Verifique se a criança está consciente, por meio de estímulos vigorosos e perguntando “Você está me ouvindo?”. Em seguida, coloque dois dedos da mão direita no queixo e a mão esquerda na testa, e estenda o pescoço, para abrir as vias aéreas. Cheque se há respiração e pulso."
 
 function PassoAPasso(){
     return(
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
     },
     textPaP: {
-        fontSize: 18,
+        fontSize: 17,
         fontFamily: 'Poppins-Regular',
         backgroundColor:"#F4FFFE",
         height:'40%',
