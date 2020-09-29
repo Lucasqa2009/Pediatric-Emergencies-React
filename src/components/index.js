@@ -38,6 +38,17 @@ export function ButtonPaPEmergency({ props, screen, name, textLabelSize = 18, st
     );
 }
 
+function ButtonAprendizagem({ props, screen, name, textLabelSize = 18 }) {
+    return (
+        <TouchableOpacity
+            style={styles.buttonAp}
+            onPress={() => props.navigate('Subcategoria')}
+        >
+            <Text>Olá</Text>
+        </TouchableOpacity>
+    );
+}
+
 /**Botão de Informações Importantes, que recebe como props(propriedade) o navigation, para navegar nas telas */
 export function ButtonInfoComp({ props }) {
     return (
@@ -62,7 +73,7 @@ const styles = StyleSheet.create({
         height: 0.125 * wWidth,                        /*NEED TEST RESPONSIVITY*/
         backgroundColor: "#FF6464",     /**AADAE5 */
         borderRadius: 27,
-        elevation: 10,
+        elevation: 8,
     },
     buttonInfoContainer: {
         flex: 1,

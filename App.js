@@ -18,6 +18,8 @@ import AprenderScreen from './src/screens/Aprendizagem';
 import Settings from './src/screens/Settings';
 import Subcategoria from './src/screens/SubCategoria';
 import PassoAPasso from './src/screens/PassoaPasso';
+import QuizContext from './src/screens/Aprendizagem/context';
+import Quiz from './src/screens/Quiz';
 import WinQuiz from './src/screens/WinQuiz';
 import Infos from './src/screens/Infos'
 import Sobre from './src/screens/Sobre';
@@ -47,6 +49,8 @@ export default class App extends Component {
           <Stack.Screen name="HomeStack" component={HomeStackScreen} />
           <Stack.Screen name="PassoAPasso" component={PassoAPasso} />
           <Stack.Screen name="Subcategoria" component={Subcategoria} />
+          <Stack.Screen name="QuizContext" component={QuizContext} />
+          <Stack.Screen name="Quiz" component={Quiz} />
           <Stack.Screen name="WinQuiz" component={WinQuiz} />
           <Stack.Screen name="Infos" component={Infos} />
           <Stack.Screen name="Politics" component={Politics} />

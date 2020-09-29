@@ -18,6 +18,8 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		066695F66FCE4DA98D888A39 /* Poppins.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E971F9EB3FB540FA9DC8BFEE /* Poppins.ttf */; };
 		7D0BB8B6812749568C14FDBD /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C96584BF8C28466194593607 /* Poppins-Regular.ttf */; };
+		98B7EDED68524E718926B5E0 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19FD54B5F5DB464D872F8CAA /* Ubuntu-Bold.ttf */; };
+		EAB7F7EE0F5849DB9C6B28FF /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6B1BF7D5E51436DBF4E2E25 /* Ubuntu-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		E971F9EB3FB540FA9DC8BFEE /* Poppins.ttf */ = {isa = PBXFileReference; name = "Poppins.ttf"; path = "../assets/fonts/Poppins.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		C96584BF8C28466194593607 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; name = "Poppins-Regular.ttf"; path = "../assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		19FD54B5F5DB464D872F8CAA /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Bold.ttf"; path = "../assets/fonts/Ubuntu-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A6B1BF7D5E51436DBF4E2E25 /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Regular.ttf"; path = "../assets/fonts/Ubuntu-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,8 @@
 			children = (
 				E971F9EB3FB540FA9DC8BFEE /* Poppins.ttf */,
 				C96584BF8C28466194593607 /* Poppins-Regular.ttf */,
+				19FD54B5F5DB464D872F8CAA /* Ubuntu-Bold.ttf */,
+				A6B1BF7D5E51436DBF4E2E25 /* Ubuntu-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -312,6 +318,8 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				066695F66FCE4DA98D888A39 /* Poppins.ttf in Resources */,
 				7D0BB8B6812749568C14FDBD /* Poppins-Regular.ttf in Resources */,
+				98B7EDED68524E718926B5E0 /* Ubuntu-Bold.ttf in Resources */,
+				EAB7F7EE0F5849DB9C6B28FF /* Ubuntu-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

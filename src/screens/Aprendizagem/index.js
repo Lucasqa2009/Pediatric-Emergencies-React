@@ -1,18 +1,19 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { ButtonInfoComp } from '../../components';
 
 function ButtonAprendizagem({ props }) {
     return (
         <TouchableOpacity
             style={styles.buttonAp}
-            onPress={() => props.navigate('Subcategoria')}
+            onPress={() => props.navigate('QuizContext')}
         >
             <Text>Olá</Text>
         </TouchableOpacity>
     );
 }
 
-/** Tem nada ainda da tela de aprendizagem*/
+
 function AprenderScreen({ navigation }) {
     return (
         <View style={styles.container}>
@@ -30,6 +31,11 @@ function AprenderScreen({ navigation }) {
 
                 </ScrollView>
             </View>
+
+            <View style={{flex:1, justifyContent:'center'}}>
+                <ButtonInfoComp props={navigation} />
+            </View>
+
         </View>
     );
 }
