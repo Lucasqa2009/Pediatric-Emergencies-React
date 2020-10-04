@@ -20,6 +20,7 @@
 		7D0BB8B6812749568C14FDBD /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C96584BF8C28466194593607 /* Poppins-Regular.ttf */; };
 		98B7EDED68524E718926B5E0 /* Ubuntu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19FD54B5F5DB464D872F8CAA /* Ubuntu-Bold.ttf */; };
 		EAB7F7EE0F5849DB9C6B28FF /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6B1BF7D5E51436DBF4E2E25 /* Ubuntu-Regular.ttf */; };
+		D79FD8BF2E51475E93D96677 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71C41B82396447C88F16C48C /* Poppins-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		C96584BF8C28466194593607 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; name = "Poppins-Regular.ttf"; path = "../assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		19FD54B5F5DB464D872F8CAA /* Ubuntu-Bold.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Bold.ttf"; path = "../assets/fonts/Ubuntu-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		A6B1BF7D5E51436DBF4E2E25 /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Regular.ttf"; path = "../assets/fonts/Ubuntu-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		71C41B82396447C88F16C48C /* Poppins-Bold.ttf */ = {isa = PBXFileReference; name = "Poppins-Bold.ttf"; path = "../assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				C96584BF8C28466194593607 /* Poppins-Regular.ttf */,
 				19FD54B5F5DB464D872F8CAA /* Ubuntu-Bold.ttf */,
 				A6B1BF7D5E51436DBF4E2E25 /* Ubuntu-Regular.ttf */,
+				71C41B82396447C88F16C48C /* Poppins-Bold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				7D0BB8B6812749568C14FDBD /* Poppins-Regular.ttf in Resources */,
 				98B7EDED68524E718926B5E0 /* Ubuntu-Bold.ttf in Resources */,
 				EAB7F7EE0F5849DB9C6B28FF /* Ubuntu-Regular.ttf in Resources */,
+				D79FD8BF2E51475E93D96677 /* Poppins-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

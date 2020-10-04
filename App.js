@@ -5,7 +5,7 @@
 import 'react-native-gesture-handler';
 
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image, Text } from 'react-native';
 
 /**Biblioteca de navegação. Container, Navegação em Stack e Navegação por abas inferiores */
 import { NavigationContainer } from '@react-navigation/native';
@@ -21,9 +21,9 @@ import PassoAPasso from './src/screens/PassoaPasso';
 import QuizContext from './src/screens/Aprendizagem/context';
 import Quiz from './src/screens/Quiz';
 import WinQuiz from './src/screens/WinQuiz';
-import Infos from './src/screens/Infos'
+import Infos from './src/screens/Infos';
 import Sobre from './src/screens/Sobre';
-import Politics from './src/screens/Politics'
+import Politics from './src/screens/Politics';
 
 /**Variável que possui propriedades para criar a navegação */
 const Tab = createBottomTabNavigator();
@@ -31,10 +31,65 @@ const Stack = createStackNavigator();
 
 function HomeStackScreen() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Aprendizagem" component={AprenderScreen} />
-      <Tab.Screen name="Settings" component={Settings} />
+    <Tab.Navigator
+      tabBarOptions={{
+        activeBackgroundColor: '#22CDCD',
+        inactiveBackgroundColor: '#337B7B',
+        tabStyle: { borderRadius: 14 },
+        style: { backgroundColor: "#337B7B", height: 60 }
+      }}
+      screenOptions={({ route }) => ({
+
+        tabBarIcon: ({ focused }) => {
+          let iconPath;
+
+          if (route.name === 'Home') {
+            iconPath = focused ? require("./assets/images/aprenderIcon.png") : require('./assets/images/aprenderIconInact.png')
+          } else if (route.name === 'Aprendizagem') {
+            iconPath = require("./assets/images/testeIcon.png")
+          } else if (route.name === 'Settings') {
+            iconPath = require("./assets/images/configIcon.png")
+          }
+          return (
+            <Image
+              source={iconPath}
+              style={
+                focused
+                  ? { resizeMode: "contain", height: '120%', marginTop: -3 }
+                  : { resizeMode: "contain", height: '75%' }}
+            />
+          );
+        }
+      })}
+    >
+
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarLabel: ({ focused }) => (
+            <Text style={focused ? styles.tabLabelActive : styles.tabLabelInactive}>Aprender</Text>
+          )
+        }}
+      />
+      <Tab.Screen
+        name="Aprendizagem"
+        component={AprenderScreen}
+        options={{
+          tabBarLabel: ({ focused }) => (
+            <Text style={focused ? styles.tabLabelActive : styles.tabLabelInactive}>Testes</Text>
+          )
+        }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={Settings}
+        options={{
+          tabBarLabel: ({ focused }) => (
+            <Text style={focused ? styles.tabLabelActive : styles.tabLabelInactive}>Configurações</Text>
+          )
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -68,5 +123,19 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#F4FFFE"
+  },
+  tabLabelActive: {
+    color: 'white',
+    fontFamily: 'Poppins-Bold',
+    fontSize: 15,
+    marginBottom: 2,
+    textShadowOffset: { width: 0, height: 4 },
+    textShadowRadius: 7,
+    textShadowColor: 'black'
+  },
+  tabLabelInactive: {
+    color: '#ECECEC',
+    fontSize: 12,
+    fontFamily: 'Poppins-Bold',
   }
 })
