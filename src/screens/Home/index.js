@@ -46,7 +46,7 @@ export default function Home({ navigation }) {
                     <ButtonEmergency
                         name='Afogamento'
                         props={navigation}
-                        screen='Subcategoria'
+                        screen='PassoAPasso'
                         buttonSubVar='afogamento'
                     />
                     <ButtonEmergency
@@ -58,7 +58,7 @@ export default function Home({ navigation }) {
                     <ButtonEmergency
                         name='Choque Elétrico'
                         props={navigation}
-                        screen='Subcategoria'
+                        screen='PassoAPasso'
                         buttonSubVar='choques'
                     />
                 </ScrollView>

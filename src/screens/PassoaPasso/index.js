@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 import { wWidth } from '../../configs/dimensions'
-import { ChangeStepPCR, contentArray } from '../../components/EmergencyStepsControl'
+import { ChangeStepPCR, contentArray,ChangeTextArray } from '../../components/EmergencyStepsControl'
 
 /** Variável que guarda o tamanho do body na tela (84% de largura) > ver em ../../configs/dimensions */
 const containerWidth = (84 / 100) * wWidth;
@@ -13,6 +13,7 @@ const textPaP1 = "Classificar a gravidade da vítima: Verifique se a criança es
 
 function PassoAPasso() {
     const [index, setIndex] = useState(0);
+    ChangeTextArray()
     return (
         <View style={styles.page}>
             <View style={styles.container}>
