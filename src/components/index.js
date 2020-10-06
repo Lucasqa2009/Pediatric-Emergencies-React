@@ -3,6 +3,8 @@ import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { wWidth } from '../configs/dimensions';
 import { ChangeSubVariable } from '../screens/SubCategoria/changeSubs';
 
+import {ChangeStepPCR} from '../components/EmergencyStepsControl'
+
 /**Botão quadrado (usado no Emergencias e Subcategoria) */
 export function ButtonEmergency({ props, screen, name, textLabelSize = 18, styleExtra = null, buttonSubVar = null }) {
 

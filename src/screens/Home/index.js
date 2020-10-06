@@ -10,7 +10,7 @@ import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 
 /**Aqui é legal notar que  como os botões não são exportados como Default, preciso importá-los pelo próprio nome, entre chaves*/
-import { ButtonInfoComp } from '../../components';
+import { ButtonInfoComp, ButtonTeste } from '../../components';
 import { ButtonEmergency } from '../../components';
 
 
@@ -46,7 +46,7 @@ export default function Home({ navigation }) {
                     <ButtonEmergency
                         name='Afogamento'
                         props={navigation}
-                        screen='Subcategoria'
+                        screen='PassoAPasso'
                         buttonSubVar='afogamento'
                     />
                     <ButtonEmergency
@@ -58,7 +58,7 @@ export default function Home({ navigation }) {
                     <ButtonEmergency
                         name='Choque Elétrico'
                         props={navigation}
-                        screen='Subcategoria'
+                        screen='PassoAPasso'
                         buttonSubVar='choques'
                     />
                 </ScrollView>

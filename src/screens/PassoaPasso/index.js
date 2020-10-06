@@ -1,7 +1,10 @@
-import React from 'react';
+//import React from 'react';
+import React, { useState } from 'react';
+
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 import { wWidth } from '../../configs/dimensions'
+import { ChangeStepPCR, contentArray,ChangeTextArray } from '../../components/EmergencyStepsControl'
 
 /** Variável que guarda o tamanho do body na tela (84% de largura) > ver em ../../configs/dimensions */
 const containerWidth = (84 / 100) * wWidth;
@@ -9,6 +12,8 @@ const containerWidth = (84 / 100) * wWidth;
 const textPaP1 = "Classificar a gravidade da vítima: Verifique se a criança está consciente, por meio de estímulos vigorosos e perguntando “Você está me ouvindo?”. Em seguida, coloque dois dedos da mão direita no queixo e a mão esquerda na testa, e estenda o pescoço, para abrir as vias aéreas. Cheque se há respiração e pulso."
 
 function PassoAPasso() {
+    const [index, setIndex] = useState(0);
+    ChangeTextArray()
     return (
         <View style={styles.page}>
             <View style={styles.container}>
@@ -20,10 +25,10 @@ function PassoAPasso() {
                     />
                 </View>
 
-                <Text style={styles.textPaP}>{textPaP1}</Text>
+                <Text style={styles.textPaP}>{ChangeStepPCR(index)}</Text> 
 
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.buttonPaP}>
+                    <TouchableOpacity style={styles.buttonPaP} onPress = {()=> {index >= 1 ? setIndex(index -1): null}}>
                         <Image
                             style={styles.arrowIcon}
                             source={require('../../../assets/images/seta_esquerda.png')}
@@ -32,7 +37,7 @@ function PassoAPasso() {
                     {/*Contador */}
                     <Text style={styles.countPages}>1/10</Text>
                     {/*Contador */}
-                    <TouchableOpacity style={styles.buttonPaP}>
+                    <TouchableOpacity style={styles.buttonPaP} onPress = {()=> {index < contentArray.length - 1 ? setIndex(index + 1):null}}> 
                         <Image
                             style={styles.arrowIcon}
                             source={require('../../../assets/images/seta_direita.png')}

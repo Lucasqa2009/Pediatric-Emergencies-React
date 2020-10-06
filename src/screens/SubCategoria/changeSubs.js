@@ -32,9 +32,9 @@ function Replace(props3) {
 function Prc(props3) {
     return (
         <View style={styles.container}>
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="Menores de 1 ano (lactente)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} />
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="Acima de 1 ano até a puberdade (criança)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} />
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="Adolescentes, crianças obesas e adultos" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Menores de 1 ano (lactente)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar= "pcrLac" />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Acima de 1 ano até a puberdade (criança)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar= "pcrCrianca"/>
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Adolescentes, crianças obesas e adultos" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar= "pcrAdulto"/>
         </View>
     );
 }
