@@ -5,7 +5,7 @@
 import 'react-native-gesture-handler';
 
 import React, { Component } from 'react';
-import { StyleSheet, Image, Text } from 'react-native';
+import { View, StyleSheet, Image, Text, StatusBar } from 'react-native';
 
 /**Biblioteca de navegação. Container, Navegação em Stack e Navegação por abas inferiores */
 import { NavigationContainer } from '@react-navigation/native';
@@ -98,18 +98,43 @@ function HomeStackScreen() {
 export default class App extends Component {
   render() {
     return (
+
       <NavigationContainer style={styles.container}>
+        <StatusBar backgroundColor="#22CDCD" barStyle= "light-content" />
         {/**Aqui abaixo ficam guardadas todas as telas de Stack, toda vez que for para trocar, é chamada pelo "name" em algum evento (botão, por ex.) */}
-        <Stack.Navigator initialRouteName="HomeStack">
-          <Stack.Screen name="HomeStack" component={HomeStackScreen} />
-          <Stack.Screen name="PassoAPasso" component={PassoAPasso} />
-          <Stack.Screen name="Subcategoria" component={Subcategoria} />
-          <Stack.Screen name="QuizContext" component={QuizContext} />
-          <Stack.Screen name="Quiz" component={Quiz} />
-          <Stack.Screen name="WinQuiz" component={WinQuiz} />
-          <Stack.Screen name="Infos" component={Infos} />
-          <Stack.Screen name="Politics" component={Politics} />
-          <Stack.Screen name="Sobre" component={Sobre} />
+        <Stack.Navigator
+          initialRouteName="HomeStack"
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: '#22CDCD',
+              height: 55
+            },
+            headerTitleStyle: {
+              fontFamily:'Ubuntu-Bold',
+              fontSize: 20,
+              color:"white"
+            }
+          }}
+        >
+          <Stack.Screen
+            name="HomeStack"
+            component={HomeStackScreen}
+            options={{
+              headerTitle: (props) => (
+                <View style={{ flex: 1, justifyContent: "center", alignItems: "center", height: 55 }}>
+                  <Image style={{ resizeMode: "contain", width: '80%', height: '80%' }} source={require('./assets/images/LOGO.png')} />
+                </View>
+              )
+            }}
+          />
+          <Stack.Screen name="PassoAPasso" component={PassoAPasso} options={{headerTitleAlign: "center"}}/>
+          <Stack.Screen name="Subcategoria" component={Subcategoria} options={{headerTitleAlign: "center"}}/>
+          <Stack.Screen name="QuizContext" component={QuizContext} options={{headerTitleAlign: "center"}}/>
+          <Stack.Screen name="Quiz" component={Quiz} options={{headerTitleAlign: "center"}}/>
+          <Stack.Screen name="WinQuiz" component={WinQuiz} options={{headerTitleAlign: "center"}}/>
+          <Stack.Screen name="Infos" component={Infos} options={{headerTitleAlign: "center"}}/>
+          <Stack.Screen name="Politics" component={Politics} options={{headerTitleAlign: "center"}}/>
+          <Stack.Screen name="Sobre" component={Sobre} options={{headerTitleAlign: "center"}}/>
         </Stack.Navigator>
       </NavigationContainer>
     );

@@ -10,10 +10,10 @@ export function ChangeSubVariable(props) {
 
 function ChangeSubs({ props2 }) {
     return (
-        subVariable === 'pcr' ? Prc(props2)        
-        : subVariable === 'quedas' ? Quedas(props2)
-        : subVariable === 'queimaduras' ? Queimaduras(props2)
-        :Replace(props2)
+        subVariable === 'pcr' ? Prc(props2)
+            : subVariable === 'quedas' ? Quedas(props2)
+                : subVariable === 'queimaduras' ? Queimaduras(props2)
+                    : Replace(props2)
     );
 
 }

@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     buttonBox: {
         width: 0.39 * wWidth,
         height: 0.39 * wWidth,                        /*NEED TEST RESPONSIVITY*/
-        backgroundColor: "#8F8F8F",     /**AADAE5 */
+        backgroundColor: "#AADAE5",     /**AADAE5 */
         borderRadius: 8,
         marginBottom: 20,
         elevation: 10,

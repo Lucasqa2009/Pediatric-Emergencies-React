@@ -18,14 +18,14 @@ function Settings({ navigation }) {
 
     return (
         <View style={{ flex: 1, width: '100%', backgroundColor: '#F4FFFE' }}>
-            <View style={{ flex: 1, width: '83%', alignSelf: "center", justifyContent: "space-between", marginBottom: 25 }}>
-                <Switch
+            <View style={{ flex: 1, width: '83%', alignSelf: "center", justifyContent: "flex-end", marginBottom: 25 }}>
+                {/*<Switch
                     style={{ transform: [{scale: 2}], alignSelf:"flex-end" }}
                     trackColor={{ false: "#A2BBBD", true: "#77D3D3" }}
                     thumbColor="#1A7C7C"
                     onValueChange={toggleSwitch}
                     value={isEnabled}
-                />
+                />*/}
                 <ButtonSettings props={navigation} name="Sobre" screens="Sobre" />
             </View>
         </View>
