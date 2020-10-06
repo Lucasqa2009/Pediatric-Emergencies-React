@@ -13,7 +13,8 @@ function ChangeSubs({ props2 }) {
         subVariable === 'pcr' ? Prc(props2)
             : subVariable === 'quedas' ? Quedas(props2)
                 : subVariable === 'queimaduras' ? Queimaduras(props2)
-                    : Replace(props2)
+                    : subVariable === 'engasgo' ? Engasgo(props2)
+                        : Replace(props2)
     );
 
 }
@@ -32,9 +33,9 @@ function Replace(props3) {
 function Prc(props3) {
     return (
         <View style={styles.container}>
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="Menores de 1 ano (lactente)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar= "pcrLac" />
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="Acima de 1 ano até a puberdade (criança)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar= "pcrCrianca"/>
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="Adolescentes, crianças obesas e adultos" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar= "pcrAdulto"/>
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Menores de 1 ano (lactente)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="pcrLac" />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Acima de 1 ano até a puberdade (criança)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="pcrCrianca" />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Adolescentes, crianças obesas e adultos" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="pcrAdulto" />
         </View>
     );
 }
@@ -58,6 +59,17 @@ function Queimaduras(props3) {
         </View>
     );
 }
+function Engasgo(props3) {
+    return (
+        <View style={styles.container}>
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Menor de 1 ano (Lactente)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Menor de 1 ano INCONSCIENTE (Lactente)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Maior de 1 ano (Criança)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Maior de 1 ano INCONSCIENTE (Criança)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} />
+        </View>
+    );
+}
+
 
 export default ChangeSubs;
 

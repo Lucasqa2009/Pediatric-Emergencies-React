@@ -100,7 +100,7 @@ export default class App extends Component {
     return (
 
       <NavigationContainer style={styles.container}>
-        <StatusBar backgroundColor="#22CDCD" barStyle= "light-content" />
+        <StatusBar backgroundColor="#22CDCD" barStyle="light-content" />
         {/**Aqui abaixo ficam guardadas todas as telas de Stack, toda vez que for para trocar, é chamada pelo "name" em algum evento (botão, por ex.) */}
         <Stack.Navigator
           initialRouteName="HomeStack"
@@ -110,9 +110,9 @@ export default class App extends Component {
               height: 55
             },
             headerTitleStyle: {
-              fontFamily:'Ubuntu-Bold',
+              fontFamily: 'Ubuntu-Bold',
               fontSize: 20,
-              color:"white"
+              color: "white"
             }
           }}
         >
@@ -127,14 +127,44 @@ export default class App extends Component {
               )
             }}
           />
-          <Stack.Screen name="PassoAPasso" component={PassoAPasso} options={{headerTitleAlign: "center"}}/>
-          <Stack.Screen name="Subcategoria" component={Subcategoria} options={{headerTitleAlign: "center"}}/>
-          <Stack.Screen name="QuizContext" component={QuizContext} options={{headerTitleAlign: "center"}}/>
-          <Stack.Screen name="Quiz" component={Quiz} options={{headerTitleAlign: "center"}}/>
-          <Stack.Screen name="WinQuiz" component={WinQuiz} options={{headerTitleAlign: "center"}}/>
-          <Stack.Screen name="Infos" component={Infos} options={{headerTitleAlign: "center"}}/>
-          <Stack.Screen name="Politics" component={Politics} options={{headerTitleAlign: "center"}}/>
-          <Stack.Screen name="Sobre" component={Sobre} options={{headerTitleAlign: "center"}}/>
+          <Stack.Screen
+            name="PassoAPasso"
+            component={PassoAPasso}
+            options={{
+              headerTitleAlign: "center",
+              headerTitle: (props) => (
+                <View style={styles.headerTitleContainerCSS}>
+                  <Text style={styles.headerTitleCSS}>Parada Cardiorrespiratória: Lactentes</Text>
+                </View>
+              ),
+              headerTitleContainerStyle: {
+                width: '80%',
+                height: '100%',
+              }
+            }}
+          />
+          <Stack.Screen
+            name="Subcategoria"
+            component={Subcategoria}
+            options={{
+              headerTitleAlign: "center",
+              headerTitle: (props) => (
+                <View style={styles.headerTitleContainerCSS}>
+                  <Text style={styles.headerTitleCSS}>Sobre</Text>
+                </View>
+              ),
+              headerTitleContainerStyle: {
+                width: '80%',
+                height: '100%',
+              }
+            }}
+          />
+          <Stack.Screen name="QuizContext" component={QuizContext} options={{ headerTitleAlign: "center" }} />
+          <Stack.Screen name="Quiz" component={Quiz} options={{ headerTitleAlign: "center" }} />
+          <Stack.Screen name="WinQuiz" component={WinQuiz} options={{ headerTitleAlign: "center" }} />
+          <Stack.Screen name="Infos" component={Infos} options={{ headerTitleAlign: "center" }} />
+          <Stack.Screen name="Politics" component={Politics} options={{ headerTitleAlign: "center" }} />
+          <Stack.Screen name="Sobre" component={Sobre} options={{ headerTitleAlign: "center" }} />
         </Stack.Navigator>
       </NavigationContainer>
     );
@@ -162,5 +192,17 @@ const styles = StyleSheet.create({
     color: '#ECECEC',
     fontSize: 12,
     fontFamily: 'Poppins-Bold',
+  },
+
+  headerTitleContainerCSS: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  headerTitleCSS: {
+    fontFamily: 'Ubuntu-Bold',
+    fontSize: 20,
+    color:"white",
+    textAlign: "center"
   }
 })
