@@ -5,6 +5,33 @@ import { ChangeSubVariable } from '../screens/SubCategoria/changeSubs';
 
 /**Botão quadrado (usado no Emergencias e Subcategoria) */
 export function ButtonEmergency({ props, screen, name, textLabelSize = 18, styleExtra = null, buttonSubVar = null }) {
+
+    let emergencyIcon;
+
+    switch (buttonSubVar) {
+        case 'pcr':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/pcrIcon.png')
+            break;
+        case 'queimaduras':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/queimadurasIcon.png')
+            break;
+        case 'quedas':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/quedaIcon.png')
+            break;
+        case 'afogamento':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/afogamentoIcon.png')
+            break;
+        case 'choques':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/choqueIcon.png')
+            break;
+        case 'engasgo':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/engasgoIcon.png')
+            break;
+
+        default:
+            break;
+    }
+
     return (
         <TouchableOpacity                           /* Isso é um Botão que, quando tocado, perde opacidade */
             style={[styles.buttonBox, styleExtra]}
@@ -13,13 +40,13 @@ export function ButtonEmergency({ props, screen, name, textLabelSize = 18, style
                 props.navigate(screen);
             }}    /**Quando pressionado, chama a screen passada como parâmetro. Pode ser traduzida como => navigation.navigate('Subcategoria') */
         >
-            <View style={{ flex: 1}}>
+            <View style={{ flex: 3, paddingTop: 20}}>
                 <Image
                     style={styles.buttonEmergencyIcon}
-                    source={require('../../assets/images/pcrIcon.png')}
+                    source={emergencyIcon}
                 />
             </View>
-            <Text style={[styles.buttonBoxText, { fontSize: textLabelSize }]}>{name}</Text>
+            <View style={{flex:2, justifyContent:"flex-end"}}><Text style={[styles.buttonBoxText, { fontSize: textLabelSize }]}>{name}</Text></View>
         </TouchableOpacity>
     );
 }
@@ -52,25 +79,37 @@ function ButtonAprendizagem({ props, screen, name, textLabelSize = 18 }) {
 /**Botão de Informações Importantes, que recebe como props(propriedade) o navigation, para navegar nas telas */
 export function ButtonInfoComp({ props }) {
     return (
-        <TouchableOpacity
-            style={styles.buttonInfo}
-            onPress={() => props.navigate('Infos')}
-        >
-            <View style={styles.buttonInfoContainer}>
-                <Image
-                    style={styles.buttonInfoImage}
-                    source={require('../../assets/images/infoIcon.png')}
-                />
-                <Text style={styles.buttonInfoText}>Informações{'\n'}Importantes</Text>
+        <View style={{marginVertical:40}}>
+            <TouchableOpacity
+                style={styles.buttonInfo}
+                onPress={() => props.navigate('Infos')}
+            >
+                <View style={styles.buttonInfoContainer}>
+                    <Image
+                        style={styles.buttonInfoImage}
+                        source={require('../../assets/images/i.png')}
+                    />
+                    <Text style={styles.buttonInfoText}>Informações{'\n'}Importantes</Text>
+                </View>
+            </TouchableOpacity>
+        </View>
+    );
+}
+
+export function TitleInformative({name}) {
+    return (
+        <View style={styles.infoTitleContainer}>
+            <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+                <Text style={styles.infoText}>{name}</Text>
             </View>
-        </TouchableOpacity>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
     buttonInfo: {
-        width: 0.53 * wWidth,
-        height: 0.125 * wWidth,                        /*NEED TEST RESPONSIVITY*/
+        width: 190,
+        height: 50,                        /*NEED TEST RESPONSIVITY*/
         backgroundColor: "#FF6464",     /**AADAE5 */
         borderRadius: 27,
         elevation: 8,
@@ -85,14 +124,15 @@ const styles = StyleSheet.create({
     buttonInfoText: {
         textAlign: 'right',
         lineHeight: 20,
-        fontSize: 17,
+        fontSize: 19,
         fontFamily: 'Poppins-Regular',
+        color: 'white'
     },
     buttonInfoImage: {
         resizeMode: "contain",
-        alignSelf: "flex-start",
+        alignSelf: "center",
         width: '15%',
-        height: '100%'
+        height: '55%'
     },
 
     /**BOTÃO DAS EMERGENCIAS */
@@ -107,7 +147,7 @@ const styles = StyleSheet.create({
     },
     buttonEmergencyIcon: {
         resizeMode: "contain",
-        alignSelf:'center',
+        alignSelf: 'center',
         width: '75%',
         height: '100%'
     },
@@ -116,5 +156,19 @@ const styles = StyleSheet.create({
         lineHeight: 20,
         paddingBottom: 4,
         textAlign: "center"
-    }
+    },
+
+    /**Caixa de Titulo do Sobre/Infos */
+    infoTitleContainer: {
+        backgroundColor: '#AADAE5',
+        width: '100%',
+        height: 50,
+        borderRadius: 10,
+        marginBottom: 10
+    },
+    infoText: {
+        paddingTop: 4,
+        fontFamily: 'Poppins-Bold',
+        fontSize: 20
+    },
 })

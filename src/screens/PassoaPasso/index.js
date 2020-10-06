@@ -16,7 +16,7 @@ function PassoAPasso() {
                 <View style={styles.containerImage}>
                     <Image
                         style={styles.image}
-                        source={require('../../../assets/images/PCR1.png')}
+                        source={require('../../../assets/images/Illustrations/PCR/PCR1.png')}
                     />
                 </View>
 

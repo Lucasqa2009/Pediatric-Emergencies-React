@@ -10,8 +10,9 @@ export function ChangeSubVariable(props) {
 
 function ChangeSubs({ props2 }) {
     return (
-        subVariable === 'prc' ? Prc(props2)        
+        subVariable === 'pcr' ? Prc(props2)        
         : subVariable === 'quedas' ? Quedas(props2)
+        : subVariable === 'queimaduras' ? Queimaduras(props2)
         :Replace(props2)
     );
 
@@ -45,6 +46,15 @@ function Quedas(props3) {
             <ButtonEmergency props={props3} screen="PassoAPasso" name="Luxação de Cotovelo" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} />
             <ButtonEmergency props={props3} screen="PassoAPasso" name="Trauma de Clavícula" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} />
             <ButtonEmergency props={props3} screen="PassoAPasso" name="Trauma de Quadril" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} />
+        </View>
+    );
+}
+function Queimaduras(props3) {
+    return (
+        <View style={styles.container}>
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="1º grau" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="2º grau" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="3º grau" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} />
         </View>
     );
 }

@@ -46,16 +46,16 @@ function HomeStackScreen() {
           if (route.name === 'Home') {
             iconPath = focused ? require("./assets/images/aprenderIcon.png") : require('./assets/images/aprenderIconInact.png')
           } else if (route.name === 'Aprendizagem') {
-            iconPath = require("./assets/images/testeIcon.png")
+            iconPath = focused ? require("./assets/images/testeIcon.png") : require('./assets/images/testeIconInact.png')
           } else if (route.name === 'Settings') {
-            iconPath = require("./assets/images/configIcon.png")
+            iconPath = focused ? require("./assets/images/configIcon.png") : require("./assets/images/configIconInact.png")
           }
           return (
             <Image
               source={iconPath}
               style={
                 focused
-                  ? { resizeMode: "contain", height: '120%', marginTop: -3 }
+                  ? { resizeMode: "contain", height: '150%', marginTop: -3 }
                   : { resizeMode: "contain", height: '75%' }}
             />
           );
