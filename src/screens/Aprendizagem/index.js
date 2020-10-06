@@ -17,7 +17,7 @@ function ButtonAprendizagem({ props }) {
 function AprenderScreen({ navigation }) {
     return (
         <View style={styles.container}>
-            <View style={{ height: '61%' }}        /**Limita o tamanho da ScrollView */>
+            <View style={{ flex: 1, marginTop: 40}}        /**Limita o tamanho da ScrollView */>
                 <ScrollView
                     contentContainerStyle={styles.containerCategoryScroll}
                     style={styles.containerCategory}
@@ -32,9 +32,7 @@ function AprenderScreen({ navigation }) {
                 </ScrollView>
             </View>
 
-            <View style={{flex:1, justifyContent:'center'}}>
                 <ButtonInfoComp props={navigation} />
-            </View>
 
         </View>
     );
@@ -61,7 +59,7 @@ const styles = StyleSheet.create({
 
     buttonAp: {
         width: '100%',
-        height: 50,
+        height: 55,
         marginBottom: 18,
         backgroundColor: '#AAAAAA',
         borderRadius: 3,

@@ -18,7 +18,7 @@ import { ButtonEmergency } from '../../components';
 export default function Home({ navigation }) {
     return (
         <View style={styles.container}>
-            <View style={{ height: '70%', marginTop: 40 }}        /**Limita o tamanho da ScrollView */>
+            <View style={{ flex: 1,marginTop: 40 }}        /**Limita o tamanho da ScrollView */>
                 <ScrollView
                     /**Uma ScrollView precisa de um estilo de conteúdo e um estilo pro container*/
                     contentContainerStyle={styles.containerCategoryScroll}
@@ -29,16 +29,16 @@ export default function Home({ navigation }) {
                         props={navigation}
                         screen='Subcategoria'
                         textLabelSize={14}
-                        buttonSubVar='prc'
+                        buttonSubVar='pcr'
                     />
                     <ButtonEmergency
-                        name='Queimaduras'
+                        name='Queimadura'
                         props={navigation}
                         screen='Subcategoria'
                         buttonSubVar='queimaduras'
                     />
                     <ButtonEmergency
-                        name='Quedas'
+                        name='Queda'
                         props={navigation}
                         screen='Subcategoria'
                         buttonSubVar='quedas'
@@ -56,7 +56,7 @@ export default function Home({ navigation }) {
                         buttonSubVar='engasgo'
                     />
                     <ButtonEmergency
-                        name='Choques Elétricos'
+                        name='Choque Elétrico'
                         props={navigation}
                         screen='Subcategoria'
                         buttonSubVar='choques'
@@ -64,9 +64,7 @@ export default function Home({ navigation }) {
                 </ScrollView>
             </View>
 
-            <View style={{flex:1, justifyContent:'center'}}>
                 <ButtonInfoComp props={navigation} />
-            </View>
 
         </View>
     );
@@ -82,7 +80,7 @@ const styles = StyleSheet.create({
     /* para maior entendimento dos ScrollViews, google it: "contentContainerStyle stackoverflow" */
     containerCategory: {
         width: '90%',
-        backgroundColor: "#58585E",     /**F4FFFE */
+        backgroundColor: "#F4FFFE",     /**58585E */
     },
     containerCategoryScroll: {
         paddingHorizontal: '3%',
