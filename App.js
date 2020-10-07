@@ -94,11 +94,15 @@ function HomeStackScreen() {
   );
 }
 
+var titleHeader = "";
+export function ChangeTitleHeader({ param }) {  
+    return (titleHeader = param);
+}
+
 /**A classe(que renderiza) "default" ou a função(que somente retorna) "default" é o export padrão de cada arquivo (só pode ter um)*/
 export default class App extends Component {
   render() {
     return (
-
       <NavigationContainer style={styles.container}>
         <StatusBar backgroundColor="#22CDCD" barStyle="light-content" />
         {/**Aqui abaixo ficam guardadas todas as telas de Stack, toda vez que for para trocar, é chamada pelo "name" em algum evento (botão, por ex.) */}
@@ -134,7 +138,7 @@ export default class App extends Component {
               headerTitleAlign: "center",
               headerTitle: (props) => (
                 <View style={styles.headerTitleContainerCSS}>
-                  <Text style={styles.headerTitleCSS}>Parada Cardiorrespiratória: Lactentes</Text>
+                  <Text style={styles.headerTitleCSS}>{titleHeader}</Text>
                 </View>
               ),
               headerTitleContainerStyle: {
@@ -202,7 +206,7 @@ const styles = StyleSheet.create({
   headerTitleCSS: {
     fontFamily: 'Ubuntu-Bold',
     fontSize: 20,
-    color:"white",
+    color: "white",
     textAlign: "center"
   }
 })
