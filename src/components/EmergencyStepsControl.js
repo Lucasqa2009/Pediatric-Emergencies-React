@@ -24,7 +24,7 @@ var contentArrayPrcLac = ["Antes de prestar socorro, verifique se você e o ambi
 "Caso a criança não responda, ou seja, não se mexa, não abra os olhos e não faça nenhum barulho, ligue imediatamente para o serviço móvel de urgência (SAMU - 192) e siga para o próximo passo.",
 "Verifique a respiração olhando a elevação do tórax e/ou abdômen. Caso a criança esteja respirando, coloque ela na posição lateral de segurança, espere o SAMU (192) ou leve até o pronto atendimento.",
 "Continue avaliando a respiração. Caso ela não esteja respirando, inicie as manobras de reanimação.", "Coloque a criança em uma superfície rígida.","Com o dedo indicador e médio faça compressões no centro do tórax da criança, um pouco abaixo dos mamilos, ou envolva a criança com as duas mãos e use os polegares para realizar a compressão.",
-"Faça 30 compressões aprofundando cerca de 1/3 (um terço) do tórax na seguinte velocidade. QUAL VELOCIDADE?",
+"Faça 30 compressões aprofundando cerca de 1/3 (um terço) do tórax na velocidade de 100 a 120 compressões por minuto.",
 "Após as 30 compressões, posicione-se atrás da criança e levante um pouco o queixo dela, deixando como na imagem.",
 "Mantendo a cabeça da criança estendida, envolva, com a sua boca, a boca e nariz da criança e deixe o ar da sua boca passar para a criança, por duas vezes, evitando soprar. Se o tórax se eleva, a manobra está correta.",
 "Continue realizando a manobra de 30 compressões para 2 respirações até que a criança responda ou o serviço móvel de urgência chegue.",

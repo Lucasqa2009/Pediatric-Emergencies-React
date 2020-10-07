@@ -171,8 +171,11 @@ export default class App extends Component {
               headerTitleContainerStyle: {
                 width: '80%',
                 height: '100%',
-              }
+              },
+              cardStyle: {backgroundColor: 'transparent'},
+              cardOverlayEnabled: true
             }}
+            mode="modal"
           />
           <Stack.Screen name="QuizContext" component={QuizContext} options={{ headerTitleAlign: "center" }} />
           <Stack.Screen name="Quiz" component={Quiz} options={{ headerTitleAlign: "center" }} />

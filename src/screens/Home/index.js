@@ -10,15 +10,18 @@ import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 
 /**Aqui é legal notar que  como os botões não são exportados como Default, preciso importá-los pelo próprio nome, entre chaves*/
-import { ButtonInfoComp, ButtonTeste } from '../../components';
+import { ButtonInfoComp} from '../../components';
 import { ButtonEmergency } from '../../components';
+
+
+
 
 
 /** Toda tela que faz parte da Stack e que leva pra uma outra tela (por meio de botão, p/ ex.), precisa receber o parametro navigation, que permite a propriedade ".navigate" */
 export default function Home({ navigation }) {
     return (
         <View style={styles.container}>
-            <View style={{ flex: 1,marginTop: 40 }}        /**Limita o tamanho da ScrollView */>
+            <View style={{ flex: 1, marginTop: 40 }}        /**Limita o tamanho da ScrollView */>
                 <ScrollView
                     /**Uma ScrollView precisa de um estilo de conteúdo e um estilo pro container*/
                     contentContainerStyle={styles.containerCategoryScroll}
@@ -66,7 +69,7 @@ export default function Home({ navigation }) {
                 </ScrollView>
             </View>
 
-                <ButtonInfoComp props={navigation} />
+            <ButtonInfoComp props={navigation} />
 
         </View>
     );

@@ -102,7 +102,7 @@ function Engasgo(props3) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#CCCCCC',
+        backgroundColor: 'rgba(52,52,52,0.93)',
         flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap',

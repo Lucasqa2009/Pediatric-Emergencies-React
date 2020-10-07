@@ -3,6 +3,18 @@ import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { wWidth } from '../configs/dimensions';
 import { ChangeSubVariable } from '../screens/SubCategoria/changeSubs';
 
+import {BoxShadow} from 'react-native-shadow';
+const shadowOpt = {
+    width:190,
+    height:50,
+    color:"#000",
+    border:4,
+    radius:25,
+    opacity:0.3,
+    x:0,
+    y:3,
+}
+
 export var titleHeader = "";
 export function ChangeTitleHeader(param ) {  
     titleHeader = param
@@ -90,18 +102,20 @@ function ButtonAprendizagem({ props, screen, name, textLabelSize = 18 }) {
 export function ButtonInfoComp({ props }) {
     return (
         <View style={{ marginVertical: 40 }}>
-            <TouchableOpacity
-                style={styles.buttonInfo}
-                onPress={() => props.navigate('Infos')}
-            >
-                <View style={styles.buttonInfoContainer}>
-                    <Image
-                        style={styles.buttonInfoImage}
-                        source={require('../../assets/images/i.png')}
-                    />
-                    <Text style={styles.buttonInfoText}>Informações{'\n'}Importantes</Text>
-                </View>
-            </TouchableOpacity>
+            <BoxShadow setting={shadowOpt}>
+                <TouchableOpacity
+                    style={styles.buttonInfo}
+                    onPress={() => props.navigate('Infos')}
+                >
+                    <View style={styles.buttonInfoContainer}>
+                        <Image
+                            style={styles.buttonInfoImage}
+                            source={require('../../assets/images/i.png')}
+                        />
+                        <Text style={styles.buttonInfoText}>Informações{'\n'}Importantes</Text>
+                    </View>
+                </TouchableOpacity>
+            </BoxShadow>
         </View>
     );
 }
@@ -128,7 +142,6 @@ const styles = StyleSheet.create({
         height: 50,                        /*NEED TEST RESPONSIVITY*/
         backgroundColor: "#FF6464",     /**AADAE5 */
         borderRadius: 27,
-        elevation: 8,
     },
     buttonInfoContainer: {
         flex: 1,
