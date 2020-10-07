@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 import { wWidth } from '../../configs/dimensions'
-import { ChangeStepPCR, contentArray, ChangeTextArray } from '../../components/EmergencyStepsControl'
+import { ChangeStepPCR, contentArray, ChangeTextArray, photoArray, ImageStep } from '../../components/EmergencyStepsControl'
 
 import { CommonActions } from '@react-navigation/native';
 import { HeaderBackButton } from '@react-navigation/stack';
@@ -47,7 +47,6 @@ const PassoAPasso = ({ navigation }) => {
                         ) {
                             ChangeSubVariable("engasgo")
                         }
-
                         navigation.dispatch(CommonActions.goBack());
                     }
                     }
@@ -63,12 +62,13 @@ const PassoAPasso = ({ navigation }) => {
     return (
         <View style={styles.page}>
             <View style={styles.container}>
-                <View style={styles.containerImage}>
+                {/* <View style={styles.containerImage}>
                     <Image
                         style={styles.image}
-                        source={require('../../../assets/images/Illustrations/PCR/PCR1.png')}
+                        source={photoArray[index]}
                     />
-                </View>
+                </View> */}
+                <ImageStep indexStep = {index}/>
 
                 {/** Texto */}
                 <Text style={styles.textPaP}>{ChangeStepPCR(index)}</Text>
