@@ -18,6 +18,9 @@ function ChangeSubs({ props2 }) {
     );
 
 }
+export default ChangeSubs;
+
+
 
 function Replace(props3) {
     return (
@@ -66,37 +69,36 @@ function Prc(props3) {
 function Quedas(props3) {
     return (
         <View style={styles.container}>
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="Traumatismo Cranioencefálico" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="traumaCranio" />
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="Fratura" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="fratura"/>
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="Luxação de Cotovelo" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="luxCotovelo" />
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="Trauma de Clavícula" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="luxClavicula" />
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="Trauma de Quadril" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="traumaQuadril" />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Traumatismo Cranioencefálico" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="traumaCranio" titleHeader="Traumatismo Cranioencefálico" />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Fratura" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="fratura" titleHeader="Fratura" />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Luxação de Cotovelo" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="luxCotovelo" titleHeader="Luxação de Cotovelo" />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Trauma de Clavícula" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="luxClavicula" titleHeader="Trauma de Clavícula"/>
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Trauma de Quadril" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="traumaQuadril" titleHeader="Trauma de Quadril"/>
         </View>
     );
 }
 function Queimaduras(props3) {
     return (
         <View style={styles.container}>
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="1º grau" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="primeiroGrau" />
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="2º grau" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="segundoGrau" />
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="3º grau" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="terceiroGrau" />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="1º grau" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="primeiroGrau" titleHeader="Queimadura de Primeiro Grau"/>
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="2º grau" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="segundoGrau" titleHeader="Queimadura de Segundo Grau" />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="3º grau" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="terceiroGrau" titleHeader="Queimadura de Terceiro Grau"/>
         </View>
     );
 }
 function Engasgo(props3) {
     return (
         <View style={styles.container}>
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="Menor de 1 ano (Lactente)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="engasLac"/>
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="Menor de 1 ano INCONSCIENTE (Lactente)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="engasInconsistente" />
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="Maior de 1 ano (Criança)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="engasCrianca"/>
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="Maior de 1 ano INCONSCIENTE (Criança)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="engasInconsistenciaCrianca"/>
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Menor de 1 ano (Lactente)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="engasLac" titleHeader="Engasgo ou Sufocamento em Lactente"/>
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Menor de 1 ano INCONSCIENTE (Lactente)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="engasInconsistente" titleHeader="Engasgo ou sufocamento em Lactente inconsciente"/>
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Maior de 1 ano (Criança)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="engasCrianca" titleHeader="Engasgo ou Sufocamento em Criança" />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="Maior de 1 ano INCONSCIENTE (Criança)" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="engasInconsistenciaCrianca" titleHeader="Engasgo ou Sufocamento em Criança inconsciente"/>
         </View>
     );
 }
 
 
 
-export default ChangeSubs;
 
 const styles = StyleSheet.create({
     container: {

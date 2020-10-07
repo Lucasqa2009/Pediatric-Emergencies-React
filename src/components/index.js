@@ -2,7 +2,15 @@ import React from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { wWidth } from '../configs/dimensions';
 import { ChangeSubVariable } from '../screens/SubCategoria/changeSubs';
-import { ChangeTitleHeader } from '../../App'
+
+export var titleHeader = "";
+export function ChangeTitleHeader(param ) {  
+    titleHeader = param
+}
+
+export function ShowTitlePaP(){
+  return(<Text style={styles.headerTitleCSS}>{titleHeader}</Text>);
+}
 
 /**Botão quadrado (usado no Emergencias e Subcategoria) */
 export function ButtonEmergency({ props, screen, name, textLabelSize = 18, styleExtra = null, buttonSubVar = null, titleHeader = "" }) {
@@ -109,6 +117,12 @@ export function TitleInformative({ name }) {
 }
 
 const styles = StyleSheet.create({
+    headerTitleCSS: {
+        fontFamily: 'Ubuntu-Bold',
+        fontSize: 20,
+        color: "white",
+        textAlign: "center"
+      },
     buttonInfo: {
         width: 190,
         height: 50,                        /*NEED TEST RESPONSIVITY*/

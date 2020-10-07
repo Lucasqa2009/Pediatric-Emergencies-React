@@ -4,20 +4,65 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 import { wWidth } from '../../configs/dimensions'
-import { ChangeStepPCR, contentArray,ChangeTextArray } from '../../components/EmergencyStepsControl'
+import { ChangeStepPCR, contentArray, ChangeTextArray } from '../../components/EmergencyStepsControl'
+
+import { CommonActions } from '@react-navigation/native';
+import { HeaderBackButton } from '@react-navigation/stack';
+import { ChangeSubVariable } from '../SubCategoria/changeSubs'
+import { titleHeader } from '../../components'
 
 /** Variável que guarda o tamanho do body na tela (84% de largura) > ver em ../../configs/dimensions */
 const containerWidth = (84 / 100) * wWidth;
 
-const textPaP1 = "Classificar a gravidade da vítima: Verifique se a criança está consciente, por meio de estímulos vigorosos e perguntando “Você está me ouvindo?”. Em seguida, coloque dois dedos da mão direita no queixo e a mão esquerda na testa, e estenda o pescoço, para abrir as vias aéreas. Cheque se há respiração e pulso."
 
-function PassoAPasso() {
+
+const PassoAPasso = ({ navigation }) => {
+    /**Corrige bug de voltar do PaP e sumir titulo das subcategorias */
+    React.useLayoutEffect(() => {
+        navigation.setOptions({
+            headerLeft: () => (
+                <HeaderBackButton
+                    onPress={() => {
+                        if (titleHeader === "Parada Cardiorrespiratória: Lactentes"
+                            || titleHeader === "Parada Cardiorrespiratória: Crianças"
+                            || titleHeader === "Parada Cardiorrespiratória: Adultos"
+                        ) {
+                            ChangeSubVariable("pcr")
+                        } else if (titleHeader === "Traumatismo Cranioencefálico"
+                            || titleHeader === "Luxação de Cotovelo"
+                            || titleHeader === "Trauma de Clavícula"
+                            || titleHeader === "Fratura"
+                            || titleHeader === "Trauma de Quadril"
+                        ) {
+                            ChangeSubVariable("quedas")
+                        } else if (titleHeader === "Queimadura de Primeiro Grau"
+                            || titleHeader === "Queimadura de Segundo Grau"
+                            || titleHeader === "Queimadura de Terceiro Grau"
+                        ) {
+                            ChangeSubVariable("queimaduras")
+                        } else if (titleHeader === "Engasgo ou Sufocamento em Lactente"
+                            || titleHeader === "Engasgo ou sufocamento em Lactente inconsciente"
+                            || titleHeader === "Engasgo ou Sufocamento em Criança"
+                            || titleHeader === "Engasgo ou Sufocamento em Criança inconsciente"
+                        ) {
+                            ChangeSubVariable("engasgo")
+                        }
+
+                        navigation.dispatch(CommonActions.goBack());
+                    }
+                    }
+                />
+            )
+        });
+    }, [navigation]);
+
+    /** Carrega o array correto de texto à depender do botão apertado antes */
     const [index, setIndex] = useState(0);
     ChangeTextArray()
+
     return (
         <View style={styles.page}>
             <View style={styles.container}>
-                <View style={styles.tag}><Text style={styles.textTag}>LACTENTE</Text></View>
                 <View style={styles.containerImage}>
                     <Image
                         style={styles.image}
@@ -25,19 +70,24 @@ function PassoAPasso() {
                     />
                 </View>
 
-                <Text style={styles.textPaP}>{ChangeStepPCR(index)}</Text> 
+                {/** Texto */}
+                <Text style={styles.textPaP}>{ChangeStepPCR(index)}</Text>
 
+                {/**Botão Esquerdo */}
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.buttonPaP} onPress = {()=> {index >= 1 ? setIndex(index -1): null}}>
+                    <TouchableOpacity style={styles.buttonPaP} onPress={() => { index >= 1 ? setIndex(index - 1) : null }}>
                         <Image
                             style={styles.arrowIcon}
                             source={require('../../../assets/images/seta_esquerda.png')}
                         />
                     </TouchableOpacity>
+
                     {/*Contador */}
-                    <Text style={styles.countPages}>{index+1}/{contentArray.length}</Text>
+                    <Text style={styles.countPages}>{index + 1}/{contentArray.length}</Text>
                     {/*Contador */}
-                    <TouchableOpacity style={styles.buttonPaP} onPress = {()=> {index < contentArray.length - 1 ? setIndex(index + 1):null}}> 
+                    
+                    {/**Botão Direito */}
+                    <TouchableOpacity style={styles.buttonPaP} onPress={() => { index < contentArray.length - 1 ? setIndex(index + 1) : null }}>
                         <Image
                             style={styles.arrowIcon}
                             source={require('../../../assets/images/seta_direita.png')}
@@ -64,7 +114,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignSelf: "center",
         width: containerWidth,
-        backgroundColor: '#F4FFFE'
+        backgroundColor: '#F4FFFE',
+        paddingTop: 40                                                                                       /**COLOQUEI ESSE PADDING PODE OU NAO AFETAR RESPONSIVIDADE */
     },
     /**Conteúdo da página de PaP (Passo a Passo) */
     tag: {
@@ -89,9 +140,9 @@ const styles = StyleSheet.create({
         borderRadius: 5,
     },
     image: {
-        width:'100%',
-        height:'100%',
-        resizeMode:"contain"
+        width: '100%',
+        height: '100%',
+        resizeMode: "contain"
     },
     textPaP: {
         fontSize: 17,

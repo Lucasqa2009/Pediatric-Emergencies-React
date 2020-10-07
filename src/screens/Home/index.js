@@ -32,6 +32,12 @@ export default function Home({ navigation }) {
                         buttonSubVar='pcr'
                     />
                     <ButtonEmergency
+                        name='Engasgo e Sufocamento'
+                        props={navigation}
+                        screen='Subcategoria'
+                        buttonSubVar='engasgo'
+                    />
+                    <ButtonEmergency
                         name='Queimadura'
                         props={navigation}
                         screen='Subcategoria'
@@ -48,18 +54,14 @@ export default function Home({ navigation }) {
                         props={navigation}
                         screen='PassoAPasso'
                         buttonSubVar='afogamento'
-                    />
-                    <ButtonEmergency
-                        name='Engasgo e Sufocamento'
-                        props={navigation}
-                        screen='Subcategoria'
-                        buttonSubVar='engasgo'
+                        titleHeader='Afogamento'
                     />
                     <ButtonEmergency
                         name='Choque Elétrico'
                         props={navigation}
                         screen='PassoAPasso'
                         buttonSubVar='choques'
+                        titleHeader='Choque Elétrico'
                     />
                 </ScrollView>
             </View>

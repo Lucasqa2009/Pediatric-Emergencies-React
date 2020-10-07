@@ -25,6 +25,9 @@ import Infos from './src/screens/Infos';
 import Sobre from './src/screens/Sobre';
 import Politics from './src/screens/Politics';
 
+import { ShowTitlePaP } from './src/components/index'
+import { subVariable } from './src/screens/SubCategoria/changeSubs'
+
 /**Variável que possui propriedades para criar a navegação */
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -94,11 +97,6 @@ function HomeStackScreen() {
   );
 }
 
-var titleHeader = "";
-export function ChangeTitleHeader({ param }) {  
-    return (titleHeader = param);
-}
-
 /**A classe(que renderiza) "default" ou a função(que somente retorna) "default" é o export padrão de cada arquivo (só pode ter um)*/
 export default class App extends Component {
   render() {
@@ -117,7 +115,8 @@ export default class App extends Component {
               fontFamily: 'Ubuntu-Bold',
               fontSize: 20,
               color: "white"
-            }
+            },
+            animationEnabled: false
           }}
         >
           <Stack.Screen
@@ -138,11 +137,11 @@ export default class App extends Component {
               headerTitleAlign: "center",
               headerTitle: (props) => (
                 <View style={styles.headerTitleContainerCSS}>
-                  <Text style={styles.headerTitleCSS}>{titleHeader}</Text>
+                  <ShowTitlePaP />
                 </View>
               ),
               headerTitleContainerStyle: {
-                width: '80%',
+                width: '75%',
                 height: '100%',
               }
             }}
@@ -154,7 +153,19 @@ export default class App extends Component {
               headerTitleAlign: "center",
               headerTitle: (props) => (
                 <View style={styles.headerTitleContainerCSS}>
-                  <Text style={styles.headerTitleCSS}>Sobre</Text>
+                  <Text
+                    style={styles.headerTitleCSS}
+                  >
+                    {
+                      subVariable==='pcr' ? "Parada Cardiorrespiratória"
+                      : subVariable==='queimaduras' ? "Queimadura"
+                      : subVariable==='engasgo' ? "Engasgo e Sufocamento"
+                      : subVariable==='quedas' ? "Queda"
+                      : subVariable==='choques' ? "Choque Elétrico"
+                      : subVariable==='afogamento' ? "Afogamento"
+                      : ""
+                    }
+                  </Text>
                 </View>
               ),
               headerTitleContainerStyle: {
