@@ -3,7 +3,12 @@ Para rodar o projeto em sua máquina é preciso fazer a instalação correta de 
 
 
 Esses passos, são bem explicados e detalhados na própria documentação do react-native:  
-https://reactnative.dev/docs/environment-setup  
+https://reactnative.dev/docs/environment-setup (inglês)
+
+Ou:
+
+https://react-native.rocketseat.dev/ (português)
+
 **Nota:** Estamos usando o *React Native CLI*, e não o *Expo*.
 
 
