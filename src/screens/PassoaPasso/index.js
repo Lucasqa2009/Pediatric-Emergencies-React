@@ -35,7 +35,7 @@ function PassoAPasso() {
                         />
                     </TouchableOpacity>
                     {/*Contador */}
-                    <Text style={styles.countPages}>1/10</Text>
+                    <Text style={styles.countPages}>{index+1}/{contentArray.length}</Text>
                     {/*Contador */}
                     <TouchableOpacity style={styles.buttonPaP} onPress = {()=> {index < contentArray.length - 1 ? setIndex(index + 1):null}}> 
                         <Image
