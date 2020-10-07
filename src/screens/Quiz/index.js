@@ -37,8 +37,8 @@ function Quiz({ navigation }) {
 
                 <View style={styles.containerAlternatives}>
                     <ButtonAlternativa props={navigation} alternative="Retirar acessórios, perto do ferimento, e roupa, próxima da queimadura, mas que não está aderida à pele. "/>
-                    <ButtonAlternativa props={navigation} alternative="Passar pomada na queimadura."/>
-                    <ButtonAlternativa props={navigation} alternative="Levar a criança para o médico."/>
+                    <ButtonAlternativa props={navigation} alternative="Passar pomada na queimadura"/>
+                    <ButtonAlternativa props={navigation} alternative="Levar a criança para o médico"/>
                     <ButtonAlternativa props={navigation} alternative="Manter o local da lesão em repouso"/>
                 </View>
 
