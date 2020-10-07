@@ -116,6 +116,9 @@ export default class App extends Component {
               fontSize: 20,
               color: "white"
             },
+            cardStyle: {
+              backgroundColor:"#F4FFFE"
+            },
             animationEnabled: false
           }}
         >
@@ -157,13 +160,13 @@ export default class App extends Component {
                     style={styles.headerTitleCSS}
                   >
                     {
-                      subVariable==='pcr' ? "Parada Cardiorrespiratória"
-                      : subVariable==='queimaduras' ? "Queimadura"
-                      : subVariable==='engasgo' ? "Engasgo e Sufocamento"
-                      : subVariable==='quedas' ? "Queda"
-                      : subVariable==='choques' ? "Choque Elétrico"
-                      : subVariable==='afogamento' ? "Afogamento"
-                      : ""
+                      subVariable === 'pcr' ? "Parada Cardiorrespiratória"
+                        : subVariable === 'queimaduras' ? "Queimadura"
+                          : subVariable === 'engasgo' ? "Engasgo e Sufocamento"
+                            : subVariable === 'quedas' ? "Queda"
+                              : subVariable === 'choques' ? "Choque Elétrico"
+                                : subVariable === 'afogamento' ? "Afogamento"
+                                  : ""
                     }
                   </Text>
                 </View>
@@ -172,17 +175,39 @@ export default class App extends Component {
                 width: '80%',
                 height: '100%',
               },
-              cardStyle: {backgroundColor: 'transparent'},
+              cardStyle: { backgroundColor: 'transparent' },
               cardOverlayEnabled: true
             }}
             mode="modal"
           />
-          <Stack.Screen name="QuizContext" component={QuizContext} options={{ headerTitleAlign: "center" }} />
+          <Stack.Screen name="QuizContext" component={QuizContext} options={{ headerTitleAlign: "center", title: "Contexto" }} />
           <Stack.Screen name="Quiz" component={Quiz} options={{ headerTitleAlign: "center" }} />
-          <Stack.Screen name="WinQuiz" component={WinQuiz} options={{ headerTitleAlign: "center" }} />
-          <Stack.Screen name="Infos" component={Infos} options={{ headerTitleAlign: "center" }} />
+          <Stack.Screen name="WinQuiz" component={WinQuiz} options={{ headerTitleAlign: "center", title: "Resultado", headerLeft: null}} />
+          <Stack.Screen
+            name="Infos"
+            component={Infos}
+            options={{
+              headerTitleAlign: "center",
+              headerTitle: (props) => (
+                <View style={styles.headerTitleContainerCSS}>
+                  <Text style={styles.headerTitleCSS}> INFORMAÇÕES</Text>
+                </View>
+              ),
+            }}
+          />
           <Stack.Screen name="Politics" component={Politics} options={{ headerTitleAlign: "center" }} />
-          <Stack.Screen name="Sobre" component={Sobre} options={{ headerTitleAlign: "center" }} />
+          <Stack.Screen
+            name="Sobre"
+            component={Sobre}
+            options={{
+              headerTitleAlign: "center",
+              headerTitle: (props) => (
+                <View style={styles.headerTitleContainerCSS}>
+                  <Text style={styles.headerTitleCSS}> SOBRE</Text>
+                </View>
+              ),
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     );
