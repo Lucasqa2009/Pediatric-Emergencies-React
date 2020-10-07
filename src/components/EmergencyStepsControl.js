@@ -119,7 +119,7 @@ var contentArrayTerceiroGrau = ["As queimaduras de 3º podem atingir camadas mai
 "Lave o local da queimadura com água corrente fria por 5 a 20 minutos. Nunca aplique gelo ou água gelada no local da queimadura. Nunca fure a bolha da queimadura.",
 "Não aplique receitas caseiras, pasta de dente ou manteiga no ferimento. Só use pomadas ou cremes na lesão se o médico indicar.",
 "Envolva o ferimento com um curativo seco e limpo, mas com cuidado para cobrir as bolhas sem estourá-las. Em seguida, agasalhe a criança.",
-"Leve a criança para o médico. Leve a criança para o médico se a queimadura apresente bolhas, a superfície queimada for muito extensa, haja queimaduras em rosto, pescoço e genitálias ou a criança apresente tosse ou dificuldade de respirar."];
+"Leve a criança para o médico se a queimadura apresente bolhas, a superfície queimada for muito extensa, haja queimaduras em rosto, pescoço e genitálias ou a criança apresente tosse ou dificuldade de respirar."];
 var contentArrayPhotoTerceiroGrau = [require('../../assets/queimadura/terceiro.png'),null,require('../../assets/queimadura/lavar.png'),
 null,require('../../assets/queimadura/enfaixar.png'),null];
 
@@ -210,7 +210,7 @@ export function ChangeTextArray() {
         //Engasgo
         :subVariable === "engasLac" ? (contentArray = contentArrayEngasLac, photoArray = contentArrayPhotoEngasLac)
         :subVariable === "engasInconsistente" ? (contentArray = contentArrayEngasInconsistente, photoArray = contentArrayPhotoEngasInconsistente)
-        :subVariable === "engasCrianca" ? contentArray = (contentArrayEngasCrianca, photoArray = contentArrayPhotoEngasCrianca)
+        :subVariable === "engasCrianca" ? (contentArray = contentArrayEngasCrianca, photoArray = contentArrayPhotoEngasCrianca)
         :subVariable === "engasInconsistenciaCrianca" ? (contentArray = contentArrayEngasInconsistenciaCrianca, photoArray = contentArrayPhotoEngasInconsistenciaCrianca)
         //Choque
         :subVariable === "choques" ? (contentArray = contentArrayChoque, photoArray = contentArrayPhotoChoque)
