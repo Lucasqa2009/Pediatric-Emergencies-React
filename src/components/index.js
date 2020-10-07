@@ -3,25 +3,25 @@ import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { wWidth } from '../configs/dimensions';
 import { ChangeSubVariable } from '../screens/SubCategoria/changeSubs';
 
-import {BoxShadow} from 'react-native-shadow';
+import { BoxShadow } from 'react-native-shadow';
 const shadowOpt = {
-    width:190,
-    height:50,
-    color:"#000",
-    border:4,
-    radius:25,
-    opacity:0.3,
-    x:0,
-    y:3,
+    width: 190,
+    height: 50,
+    color: "#000",
+    border: 4,
+    radius: 25,
+    opacity: 0.3,
+    x: 0,
+    y: 3,
 }
 
 export var titleHeader = "";
-export function ChangeTitleHeader(param ) {  
+export function ChangeTitleHeader(param) {
     titleHeader = param
 }
 
-export function ShowTitlePaP(){
-  return(<Text style={styles.headerTitleCSS}>{titleHeader}</Text>);
+export function ShowTitlePaP() {
+    return (<Text style={styles.headerTitleCSS}>{titleHeader}</Text>);
 }
 
 /**Botão quadrado (usado no Emergencias e Subcategoria) */
@@ -33,10 +33,58 @@ export function ButtonEmergency({ props, screen, name, textLabelSize = 18, style
         case 'pcr':
             emergencyIcon = require('../../assets/images/EmergencyIcons/pcrIcon.png')
             break;
+        case 'pcrLac':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/pcrIcon.png')
+            break;
+        case 'pcrCrianca':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/pcrIcon.png')
+            break;
+        case 'pcrAdulto':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/pcrIcon.png')
+            break;
+        case 'engasgo':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/engasgoIcon.png')
+            break;
+        case 'engasLac':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/engasgoIcon.png')
+            break;
+        case 'engasCrianca':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/engasgoIcon.png')
+            break;
+        case 'engasInconsistente':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/engasgoIcon.png')
+            break;
+        case 'engasInconsistenciaCrianca':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/engasgoIcon.png')
+            break;
         case 'queimaduras':
             emergencyIcon = require('../../assets/images/EmergencyIcons/queimadurasIcon.png')
             break;
+        case 'primeiroGrau':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/queimadurasIcon.png')
+            break;
+        case 'segundoGrau':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/queimadurasIcon.png')
+            break;
+        case 'terceiroGrau':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/queimadurasIcon.png')
+            break;
         case 'quedas':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/quedaIcon.png')
+            break;
+        case 'traumaCranio':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/quedaIcon.png')
+            break;
+        case 'fratura':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/quedaIcon.png')
+            break;
+        case 'luxCotovelo':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/quedaIcon.png')
+            break;
+        case 'luxClavicula':
+            emergencyIcon = require('../../assets/images/EmergencyIcons/quedaIcon.png')
+            break;
+        case 'traumaQuadril':
             emergencyIcon = require('../../assets/images/EmergencyIcons/quedaIcon.png')
             break;
         case 'afogamento':
@@ -44,9 +92,6 @@ export function ButtonEmergency({ props, screen, name, textLabelSize = 18, style
             break;
         case 'choques':
             emergencyIcon = require('../../assets/images/EmergencyIcons/choqueIcon.png')
-            break;
-        case 'engasgo':
-            emergencyIcon = require('../../assets/images/EmergencyIcons/engasgoIcon.png')
             break;
 
         default:
@@ -87,13 +132,50 @@ export function ButtonPaPEmergency({ props, screen, name, textLabelSize = 18, st
     );
 }
 
-function ButtonAprendizagem({ props, screen, name, textLabelSize = 18 }) {
+export function ButtonAprendizagem({ props, name, subVar = null }) {
+    let quizIcon;
+
+    switch (subVar) {
+        case 'pcr':
+            quizIcon = require('../../assets/images/EmergencyIcons/pcrIcon.png')
+            break;
+        case 'engasgo':
+            quizIcon = require('../../assets/images/EmergencyIcons/engasgoIcon.png')
+            break;
+        case 'queimadura':
+            quizIcon = require('../../assets/images/EmergencyIcons/queimadurasIcon.png')
+            break;
+        case 'queda':
+            quizIcon = require('../../assets/images/EmergencyIcons/quedaIcon.png')
+            break;
+        case 'afogamento':
+            quizIcon = require('../../assets/images/EmergencyIcons/afogamentoIcon.png')
+            break;
+        case 'choque':
+            quizIcon = require('../../assets/images/EmergencyIcons/choqueIcon.png')
+            break;
+
+
+        default:
+            break;
+    }
+
     return (
         <TouchableOpacity
             style={styles.buttonAp}
-            onPress={() => props.navigate('Subcategoria')}
+            onPress={() => props.navigate('QuizContext')}
         >
-            <Text>Olá</Text>
+            <View style={{ flex: 1, flexDirection: 'row', paddingVertical:10}}>
+                <View style={{ flex: 2 }}>
+                    <Image
+                        style={styles.buttonQuizIcon}
+                        source={quizIcon}
+                    />
+                </View>
+                <View style={{ flex: 7, justifyContent: "center", marginTop:5}}>
+                    <Text style={styles.buttonBoxTextTeste}>{name}</Text>
+                </View>
+            </View>
         </TouchableOpacity>
     );
 }
@@ -136,7 +218,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: "white",
         textAlign: "center"
-      },
+    },
     buttonInfo: {
         width: 190,
         height: 50,                        /*NEED TEST RESPONSIVITY*/
@@ -185,6 +267,28 @@ const styles = StyleSheet.create({
         lineHeight: 20,
         paddingBottom: 4,
         textAlign: "center"
+    },
+
+    /**BOTÃO DOS TESTES */
+    buttonAp: {
+        width: '100%',
+        height: 55,
+        marginBottom: 18,
+        backgroundColor: '#AADAE5',
+        borderRadius: 3,
+        elevation: 10
+    },
+    buttonQuizIcon: {
+        resizeMode: "contain",
+        width: '60%',
+        height: '100%',
+        alignSelf: 'center',
+        
+    },
+    buttonBoxTextTeste: {
+        fontFamily: 'Poppins-Regular',
+        lineHeight: 23,
+        fontSize: 20,
     },
 
     /**Caixa de Titulo do Sobre/Infos */

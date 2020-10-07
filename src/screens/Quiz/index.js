@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { wWidth } from '../../configs/dimensions';
 
-export function ButtonAlternativa({props}) {
+export function ButtonAlternativa({props, alternative}) {
     return (
         <View style={styles.buttonAlternative}>
             <TouchableOpacity
@@ -10,7 +10,7 @@ export function ButtonAlternativa({props}) {
                 onPress={()=>props.navigate('WinQuiz')}
             >
                 <View style={styles.buttonAlternativeContainer}>
-                    <Text style={styles.buttonAlternativeText}>Ela deve, primeiro, colocar a criança no chão, uma superfície rígida, para iniciar a respiração boca a boca </Text>
+                    <Text style={styles.buttonAlternativeText}>{alternative} </Text>
                 </View>
             </TouchableOpacity>
         </View>
@@ -30,16 +30,16 @@ function Quiz({ navigation }) {
                     </View>
                     <View style={{justifyContent:"center"}} /**AJEITAR PERGUNTA QUE NÃO ESTÁ CENTRALIZADA */>
                         <Text style={{ fontSize: 16, fontFamily: 'Poppins-Regular', marginBottom: 15}}>
-                        Maria xiquinha
+                        O pai a afastou da fonte de calor e percebeu uma queimadura vermelha e com bolhas. O que deve ser feito em seguida? 
                         </Text>
                     </View>
                 </View>
 
                 <View style={styles.containerAlternatives}>
-                    <ButtonAlternativa props={navigation}/>
-                    <ButtonAlternativa props={navigation}/>
-                    <ButtonAlternativa props={navigation}/>
-                    <ButtonAlternativa props={navigation}/>
+                    <ButtonAlternativa props={navigation} alternative="Retirar acessórios, perto do ferimento, e roupa, próxima da queimadura, mas que não está aderida à pele. "/>
+                    <ButtonAlternativa props={navigation} alternative="Passar pomada na queimadura."/>
+                    <ButtonAlternativa props={navigation} alternative="Levar a criança para o médico."/>
+                    <ButtonAlternativa props={navigation} alternative="Manter o local da lesão em repouso"/>
                 </View>
 
             </View>
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     buttonAlternativeContainer: {
-        paddingHorizontal: '7%',
+        paddingHorizontal: '6%',
     },
     buttonAlternativeText: {
         fontSize: 14,

@@ -2,12 +2,12 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { wWidth } from '../../configs/dimensions';
 
-export function ButtonAgir({props}) {
+export function ButtonAgir({ props }) {
     return (
         <View style={styles.buttonAlternative}>
             <TouchableOpacity
                 style={styles.buttonAlternative}
-                onPress={()=> props.navigate('Quiz')}
+                onPress={() => props.navigate('Quiz')}
             >
                 <View style={styles.buttonAlternativeContainer}>
                     <Text style={styles.buttonAlternativeText}>Agir</Text>
@@ -22,21 +22,19 @@ function QuizContext({ navigation }) {
     return (
         <View style={styles.page}>
             <View style={styles.container}>
-                <View style={{ flex: 1 }}>
-                    <View style={styles.containerRobertinho}>
-                        <Image
-                            style={styles.robertinhoImage}
-                            source={require('../../../assets/images/Robertinho/robertinhoThink1.png')} />
-                    </View>
-                    <View style={{justifyContent:"center"}} /**AJEITAR PERGUNTA QUE NÃO ESTÁ CENTRALIZADA */>
-                        <Text style={{ fontSize: 16, fontFamily: 'Poppins-Regular', marginBottom: 15}}>
-                        Maria xiquinha
+                <View style={styles.containerRobertinho}>
+                    <Image
+                        style={styles.robertinhoImage}
+                        source={require('../../../assets/images/Robertinho/robertinhoThink1.png')} />
+                </View>
+                <View style={{ justifyContent: "center" }} /**AJEITAR PERGUNTA QUE NÃO ESTÁ CENTRALIZADA */>
+                    <Text style={{ fontSize: 16, fontFamily: 'Poppins-Regular', marginBottom: 15 }}>
+                        Uma criança de 7 anos estava com os pais na cozinha enquanto eles ferviam água para preparar o almoço. Durante um momento de distração, a criança derrubou a água quente no seu braço.
                         </Text>
-                    </View>
                 </View>
 
                 <View style={styles.containerAlternatives}>
-                    <ButtonAgir props={navigation}/>
+                    <ButtonAgir props={navigation} />
                 </View>
 
             </View>
@@ -66,19 +64,19 @@ const styles = StyleSheet.create({
         resizeMode: "contain",
         width: '100%',
         height: '100%',
-        marginTop:10
+        marginTop: 10
     },
 
     containerAlternatives: {
         flex: 1,
-        justifyContent: 'space-between',
-        marginBottom: 10,
+        justifyContent: "flex-end",
+        marginBottom: 30,
         //backgroundColor: '#F8F868'
     },
 
     buttonAlternative: {
         width: '100%',
-        height: 65,                        /*NEED TEST RESPONSIVITY*/
+        height: 45,                        /*NEED TEST RESPONSIVITY*/
         backgroundColor: "#AADAE5",     /**AADAE5 */
         borderRadius: 40,
         marginVertical: 4,
@@ -89,7 +87,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: '7%',
     },
     buttonAlternativeText: {
-        fontSize: 14,
-        fontFamily:'Poppins-Regular'
+        fontSize: 24,
+        fontFamily: 'Poppins-Regular',
+        textAlign:"center"
     }
 })

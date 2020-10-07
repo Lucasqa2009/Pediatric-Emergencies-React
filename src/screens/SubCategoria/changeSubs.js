@@ -80,9 +80,9 @@ function Quedas(props3) {
 function Queimaduras(props3) {
     return (
         <View style={styles.container}>
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="1º grau" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="primeiroGrau" titleHeader="Queimadura de Primeiro Grau"/>
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="2º grau" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="segundoGrau" titleHeader="Queimadura de Segundo Grau" />
-            <ButtonEmergency props={props3} screen="PassoAPasso" name="3º grau" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="terceiroGrau" titleHeader="Queimadura de Terceiro Grau"/>
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="1º Grau" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="primeiroGrau" titleHeader="Queimadura de Primeiro Grau"/>
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="2º Grau" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="segundoGrau" titleHeader="Queimadura de Segundo Grau" />
+            <ButtonEmergency props={props3} screen="PassoAPasso" name="3º Grau" styleExtra={{ marginHorizontal: 10 }} textLabelSize={16} buttonSubVar="terceiroGrau" titleHeader="Queimadura de Terceiro Grau"/>
         </View>
     );
 }

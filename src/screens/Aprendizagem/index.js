@@ -1,38 +1,27 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import { ButtonInfoComp } from '../../components';
-
-function ButtonAprendizagem({ props }) {
-    return (
-        <TouchableOpacity
-            style={styles.buttonAp}
-            onPress={() => props.navigate('QuizContext')}
-        >
-            <Text>Olá</Text>
-        </TouchableOpacity>
-    );
-}
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { ButtonInfoComp, ButtonAprendizagem } from '../../components';
 
 
 function AprenderScreen({ navigation }) {
     return (
         <View style={styles.container}>
-            <View style={{ flex: 1, marginTop: 40}}        /**Limita o tamanho da ScrollView */>
+            <View style={{ flex: 1, marginTop: 40 }}        /**Limita o tamanho da ScrollView */>
                 <ScrollView
                     contentContainerStyle={styles.containerCategoryScroll}
                     style={styles.containerCategory}
                 >
-                    <ButtonAprendizagem props={navigation} />
-                    <ButtonAprendizagem props={navigation} />
-                    <ButtonAprendizagem props={navigation} />
-                    <ButtonAprendizagem props={navigation} />
-                    <ButtonAprendizagem props={navigation} />
-                    <ButtonAprendizagem props={navigation} />
+                    <ButtonAprendizagem props={navigation} name={"Parada Cardiorrespiratória"} subVar={'pcr'}/>
+                    <ButtonAprendizagem props={navigation} name={"Engasgo e Sufocamento"}  subVar={'engasgo'}/>
+                    <ButtonAprendizagem props={navigation} name={"Queimadura"}  subVar={'queimadura'}/>
+                    <ButtonAprendizagem props={navigation} name={"Queda"} subVar={'queda'}/>
+                    <ButtonAprendizagem props={navigation} name={"Afogamento"}  subVar={'afogamento'}/>
+                    <ButtonAprendizagem props={navigation} name={"Choque Elétrico"}  subVar={'choque'}/>
 
                 </ScrollView>
             </View>
 
-                <ButtonInfoComp props={navigation} />
+            <ButtonInfoComp props={navigation} />
 
         </View>
     );
@@ -47,8 +36,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#F4FFFE"        /**F47F4E */
     },
     containerCategory: {
-        width: '90%',
-        backgroundColor: "#58585E",     /**F4FFFE */
+        width: '90%',   /**F4FFFE */
     },
     containerCategoryScroll: {
         paddingHorizontal: '3%',
@@ -57,12 +45,5 @@ const styles = StyleSheet.create({
         justifyContent: "space-between"
     },
 
-    buttonAp: {
-        width: '100%',
-        height: 55,
-        marginBottom: 18,
-        backgroundColor: '#AAAAAA',
-        borderRadius: 3,
-        elevation: 10
-    }
+    
 })

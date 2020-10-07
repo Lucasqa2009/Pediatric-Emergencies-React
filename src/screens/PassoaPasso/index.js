@@ -70,29 +70,30 @@ const PassoAPasso = ({ navigation }) => {
                     />
                 </View>
 
-                {/** Texto */}
-                <Text style={styles.textPaP}>{ChangeStepPCR(index)}</Text>
-
-                {/**Botão Esquerdo */}
-                <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.buttonPaP} onPress={() => { index >= 1 ? setIndex(index - 1) : null }}>
-                        <Image
-                            style={styles.arrowIcon}
-                            source={require('../../../assets/images/seta_esquerda.png')}
-                        />
-                    </TouchableOpacity>
-
-                    {/*Contador */}
-                    <Text style={styles.countPages}>{index + 1}/{contentArray.length}</Text>
-                    {/*Contador */}
-                    
-                    {/**Botão Direito */}
-                    <TouchableOpacity style={styles.buttonPaP} onPress={() => { index < contentArray.length - 1 ? setIndex(index + 1) : null }}>
-                        <Image
-                            style={styles.arrowIcon}
-                            source={require('../../../assets/images/seta_direita.png')}
-                        />
-                    </TouchableOpacity>
+                <View style={{flex:1}}>
+                    {/** Texto */}
+                    <Text style={styles.textPaP}>{ChangeStepPCR(index)}</Text>
+                        {/**Botão Esquerdo */}
+                        <View style={styles.buttonContainer}>
+                            <TouchableOpacity style={styles.buttonPaP} onPress={() => { index >= 1 ? setIndex(index - 1) : null }}>
+                                <Image
+                                    style={styles.arrowIcon}
+                                    source={require('../../../assets/images/seta_esquerda.png')}
+                                />
+                            </TouchableOpacity>
+        
+                            {/*Contador */}
+                            <Text style={styles.countPages}>{index + 1}/{contentArray.length}</Text>
+                            {/*Contador */}
+                            
+                            {/**Botão Direito */}
+                            <TouchableOpacity style={styles.buttonPaP} onPress={() => { index < contentArray.length - 1 ? setIndex(index + 1) : null }}>
+                                <Image
+                                    style={styles.arrowIcon}
+                                    source={require('../../../assets/images/seta_direita.png')}
+                                />
+                            </TouchableOpacity>
+                        </View>
                 </View>
 
             </View>
@@ -108,7 +109,6 @@ export default PassoAPasso
 const styles = StyleSheet.create({
     page: {
         flex: 1,
-        backgroundColor: '#F4FFFE'
     },
     container: {
         flex: 1,
@@ -145,6 +145,7 @@ const styles = StyleSheet.create({
         resizeMode: "contain"
     },
     textPaP: {
+        flex:1,
         fontSize: 17,
         fontFamily: 'Poppins-Regular',
         backgroundColor: "#F4FFFE",
@@ -153,27 +154,22 @@ const styles = StyleSheet.create({
     },
 
     /**Botões */
-    buttonContainer: {                                                    /**Responsividade zoadíssima */
-        flex: 1,
+    buttonContainer: {
         flexDirection: 'row',
-        backgroundColor: "#F4FFFE",
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        marginBottom:20
     },
     buttonPaP: {
-        width: '27%',
-        height: '75%',
+        width: 90,
+        height: 75,
         backgroundColor: '#22CDCD',
         borderRadius: 14,
         justifyContent: "center",
         alignItems: "center",
         elevation: 5
     },
-    countPages: {                                                    /**Responsividade zoadíssima */
-        backgroundColor: '#22CDCD',
-        width: '30%',
-        height: '50%',
-        borderRadius: 8,
+    countPages: {
         textAlignVertical: 'center',
         textAlign: 'center',
         fontFamily: 'Poppins',
