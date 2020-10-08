@@ -21,3 +21,8 @@ Ao final da criação de um novo projeto react-native, você pode **clonar esse 
 Talvez apenas precise **reiniciar** a emulação: feche tudo e emule o projeto novamente (se for linux ou macOS basta digitar 'react-native start' dentro da pasta do projeto em um terminal, e em outro, na mesma pasta, 'react-native run-android', estando com o emulador aberto)
 
 Qualquer dúvida sobre emulação (caso você seja o professor da disciplina da qual o projeto faça parte), entrar em contato direto. **:)** 
+
+
+Link para download do App => https://drive.google.com/file/d/1I-C9eJDccEsUkh5kth39DVXt-kgZYDjV/view?usp=sharing
+
+**Nota:** Como a instalação ocorre por fora da loja, é normal o celular acusar perigo em baixar o aplicativo. Mas isso nada mais é que um sistema de segurança para possíveis apps suspeitos. Nosso aplicativo não recolhe dados nenhum do usuário.
