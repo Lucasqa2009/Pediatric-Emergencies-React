@@ -138,7 +138,7 @@ var contentArrayEngasInconsistente = ["Se o bebê engasgado estiver inconsciente
 "Coloque a vítima em uma superfície firme e plana com cuidado e Inicie a Reanimação Cardiopulmonar (RCP) com compressões torácicas. Não verifique o pulso.",
 "Sempre que for fazer as ventilações, procure o objeto que causou o engasgo. Se conseguir ver o objeto e ele puder ser facilmente removido, remova-o com os dedos em forma de gancho. Se não conseguir ver o objeto, continue a RCP.",
 "Não tente retirar o corpo estranho às cegas, ou seja, não tente colocar os dedos na boca da vítima e procurar o objeto apenas com o tato para retirá-lo, pois isso pode empurrar ainda mais o corpo estranho e piorar a obstrução."];
-var contentArrayPhotoEngasInconsistente = [];
+var contentArrayPhotoEngasInconsistente = [null, require('../../assets/Prc1/03.png'), require('../../assets/Prc1/06.png'),require('../../assets/Engasgo/engasgoMaiorInconsciente.png') , require('../../assets/queda/fratura/nao.png')];
 
 var contentArrayEngasCrianca = ["Se uma criança engasgada estiver conseguindo falar e respirar e estiver tossindo vigorosamente para tentar expelir o objeto, não interfira, fique ao lado dela observando a situação e estimule-a a continuar tossindo. Caso ela piore, aja conforme o orientado abaixo.",
 "Se a criança está consciente, mas não consegue tossir, nem falar, tem cada vez mais dificuldade para respirar, podendo até ficar com os lábios em uma coloração azulada (cianose), ela está com uma obstrução total da via aérea. Faça os seguintes passos para ajudá-la a expelir o objeto.",
@@ -146,13 +146,13 @@ var contentArrayEngasCrianca = ["Se uma criança engasgada estiver conseguindo f
 "Envolva a criança com os braços ao redor do abdome. Feche uma das mãos e coloque um pouco acima do umbigo da vítima, na região da “boca do estômago”.",
 "Com a outra mão, segure ou cubra a mão fechada, como em um abraço. Aplique compressão forte e rápida no abdome da criança, puxando para dentro e para cima (como um “J”) (manobra de Heimlich)",
 "Repita as compressões até que o objeto seja expelido ou a vítima fique inconsciente - seguir para categoria: crianças maiores de 1 ano incoscientes."];
-var contentArrayPhotoEngasCrianca  = [];
+var contentArrayPhotoEngasCrianca  = [null, null, require('../../assets/Engasgo/engasgoMaior1.png'), null, null, null];
 
 var contentArrayEngasInconsistenciaCrianca = ["Se a criança engasgada estiver inconsciente, não respondendo mais a qualquer estímulo, faça os seguintes passos.",
 "Grite por ajuda e, se tiver alguém por perto, peça para essa pessoa chamar o serviço de emergência ou faça você mesmo (SAMU  192).",
 "Coloque a vítima no chão com cuidado e inicie a Reanimação Cardiopulmonar (RCP) com compressões torácicas. Não verifique o pulso.",
 "Sempre que for fazer as ventilações, procure o objeto que causou o engasgo. Se conseguir ver o objeto e ele puder ser facilmente removido, remova-o com o dedo em forma de gancho. Se não conseguir ver o objeto, continue a RCP."];
-var contentArrayPhotoEngasInconsistenciaCrianca= [];
+var contentArrayPhotoEngasInconsistenciaCrianca= [null, require('../../assets/Prc1/03.png'), require('../../assets/Prc1/06.png'),require('../../assets/Engasgo/engasgoMaiorInconsciente.png') , require('../../assets/queda/fratura/nao.png')];
 
 //sessão afogamento 
 var contentArrayAfogamento = ["A vítima em afogamento é comumente reconhecida por estar em posição vertical, com os braços estendidos lateralmente, batendo com os mesmos na água (pode parecer que está brincando na água).  Pode afundar e retornar a cabeça pra superfície muitas vezes, e é incapaz de gritar por socorro ou chorar.",
