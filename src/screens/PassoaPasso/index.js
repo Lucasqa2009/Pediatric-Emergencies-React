@@ -14,6 +14,17 @@ import { titleHeader } from '../../components'
 /** Variável que guarda o tamanho do body na tela (84% de largura) > ver em ../../configs/dimensions */
 const containerWidth = (84 / 100) * wWidth;
 
+import { BoxShadow } from 'react-native-shadow';
+const shadowOpt = {
+    width: 90,
+    height: 75,
+    color: "#000",
+    border: 4,
+    radius: 14,
+    opacity: 0.3,
+    x: 0,
+    y: 3,
+}
 
 
 const PassoAPasso = ({ navigation }) => {
@@ -21,7 +32,7 @@ const PassoAPasso = ({ navigation }) => {
     React.useLayoutEffect(() => {
         navigation.setOptions({
             headerLeft: () => (
-                <HeaderBackButton
+                <TouchableOpacity
                     onPress={() => {
                         if (titleHeader === "Parada Cardiorrespiratória: Lactentes"
                             || titleHeader === "Parada Cardiorrespiratória: Crianças"
@@ -50,7 +61,14 @@ const PassoAPasso = ({ navigation }) => {
                         navigation.dispatch(CommonActions.goBack());
                     }
                     }
-                />
+                >
+                <View style={{ width: 25, height: 20, marginLeft:11}}>
+                    <Image
+                        style={{ resizeMode: "contain", width: '100%', height: '100%' }}
+                        source={require('../../../assets/images/backImage.png')}
+                    />
+                </View>
+                </TouchableOpacity>
             )
         });
     }, [navigation]);
@@ -68,32 +86,36 @@ const PassoAPasso = ({ navigation }) => {
                         source={photoArray[index]}
                     />
                 </View> */}
-                <ImageStep indexStep = {index}/>
+                <ImageStep indexStep={index} />
 
-                <View style={{flex:1}}>
+                <View style={{ flex: 1 }}>
                     {/** Texto */}
                     <Text style={styles.textPaP}>{ChangeStepPCR(index)}</Text>
-                        {/**Botão Esquerdo */}
-                        <View style={styles.buttonContainer}>
+                    {/**Botão Esquerdo */}
+                    <View style={styles.buttonContainer}>
+                        <BoxShadow setting={shadowOpt}>
                             <TouchableOpacity style={styles.buttonPaP} onPress={() => { index >= 1 ? setIndex(index - 1) : null }}>
                                 <Image
                                     style={styles.arrowIcon}
                                     source={require('../../../assets/images/seta_esquerda.png')}
                                 />
                             </TouchableOpacity>
-        
-                            {/*Contador */}
-                            <Text style={styles.countPages}>{index + 1}/{contentArray.length}</Text>
-                            {/*Contador */}
-                            
-                            {/**Botão Direito */}
+                        </BoxShadow>
+
+                        {/*Contador */}
+                        <Text style={styles.countPages}>{index + 1}/{contentArray.length}</Text>
+                        {/*Contador */}
+
+                        {/**Botão Direito */}
+                        <BoxShadow setting={shadowOpt}>
                             <TouchableOpacity style={styles.buttonPaP} onPress={() => { index < contentArray.length - 1 ? setIndex(index + 1) : null }}>
                                 <Image
                                     style={styles.arrowIcon}
                                     source={require('../../../assets/images/seta_direita.png')}
                                 />
                             </TouchableOpacity>
-                        </View>
+                        </BoxShadow>
+                    </View>
                 </View>
 
             </View>
@@ -145,7 +167,7 @@ const styles = StyleSheet.create({
         resizeMode: "contain"
     },
     textPaP: {
-        flex:1,
+        flex: 1,
         fontSize: 17,
         fontFamily: 'Poppins-Regular',
         backgroundColor: "#F4FFFE",
@@ -158,7 +180,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginBottom:20
+        marginBottom: 20
     },
     buttonPaP: {
         width: 90,
@@ -167,7 +189,6 @@ const styles = StyleSheet.create({
         borderRadius: 14,
         justifyContent: "center",
         alignItems: "center",
-        elevation: 5
     },
     countPages: {
         textAlignVertical: 'center',

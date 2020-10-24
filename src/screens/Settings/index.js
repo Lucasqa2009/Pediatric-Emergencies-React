@@ -1,14 +1,29 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Switch } from 'react-native';
+import {wWidth} from '../../configs/dimensions'
+
+import { BoxShadow } from 'react-native-shadow';
+const shadowOpt = {
+    width: 0.83*wWidth,
+    height: 50,
+    color: "#000",
+    border: 4,
+    radius: 25,
+    opacity: 0.3,
+    x: 0,
+    y: 3
+}
 
 function ButtonSettings({ props, name, screens }) {
     return (
-        <TouchableOpacity
-            style={styles.buttonInfo}
-            onPress={() => props.navigate(screens)}
-        >
-            <Text style={styles.buttonInfoText}>{name}</Text>
-        </TouchableOpacity>
+        <BoxShadow setting={shadowOpt}>
+            <TouchableOpacity
+                style={styles.buttonInfo}
+                onPress={() => props.navigate(screens)}
+            >
+                <Text style={styles.buttonInfoText}>{name}</Text>
+            </TouchableOpacity>
+        </BoxShadow>
     );
 }
 
@@ -26,7 +41,7 @@ function Settings({ navigation }) {
                     onValueChange={toggleSwitch}
                     value={isEnabled}
                 />*/}
-                <ButtonSettings props={navigation} name="Sobre" screens="Sobre" />
+                <View style={{alignSelf:"center"}}><ButtonSettings props={navigation} name="Sobre" screens="Sobre" /></View>
             </View>
         </View>
     );
@@ -41,7 +56,6 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         backgroundColor: "#AADAE5",     /**AADAE5 */
         borderRadius: 27,
-        elevation: 8,
     },
     buttonInfoText: {
         textAlign: 'center',

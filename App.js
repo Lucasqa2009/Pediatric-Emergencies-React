@@ -6,6 +6,8 @@ import 'react-native-gesture-handler';
 
 import React, { Component } from 'react';
 import { View, StyleSheet, Image, Text, StatusBar } from 'react-native';
+Text.defaultProps = Text.defaultProps || {};
+Text.defaultProps.allowFontScaling = false;
 
 /**Biblioteca de navegação. Container, Navegação em Stack e Navegação por abas inferiores */
 import { NavigationContainer } from '@react-navigation/native';
@@ -117,9 +119,16 @@ export default class App extends Component {
               color: "white"
             },
             cardStyle: {
-              backgroundColor:"#F4FFFE"
+              backgroundColor: "#F4FFFE"
             },
-            animationEnabled: false
+            animationEnabled: false,
+            headerBackImage: () =>
+              <View style={{width:25, height:20}}>
+                <Image
+                  style={{ resizeMode: "contain", width:'100%', height:'100%'}}
+                  source={require('./assets/images/backImage.png')}
+                />
+              </View>
           }}
         >
           <Stack.Screen
@@ -182,7 +191,7 @@ export default class App extends Component {
           />
           <Stack.Screen name="QuizContext" component={QuizContext} options={{ headerTitleAlign: "center", title: "Contexto" }} />
           <Stack.Screen name="Quiz" component={Quiz} options={{ headerTitleAlign: "center" }} />
-          <Stack.Screen name="WinQuiz" component={WinQuiz} options={{ headerTitleAlign: "center", title: "Resultado", headerLeft: null}} />
+          <Stack.Screen name="WinQuiz" component={WinQuiz} options={{ headerTitleAlign: "center", title: "Resultado", headerLeft: null }} />
           <Stack.Screen
             name="Infos"
             component={Infos}

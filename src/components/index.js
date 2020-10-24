@@ -14,6 +14,28 @@ const shadowOpt = {
     x: 0,
     y: 3,
 }
+const shadowOptEmergency = {
+    width: 0.39*wWidth,
+    height: 0.39*wWidth,
+    color: "#000",
+    border: 4,
+    radius: 8,
+    opacity: 0.3,
+    x: 0,
+    y: 3,
+    style: {marginBottom: 20}
+}
+const shadowOptAprendizado = {
+    width: 0.85*wWidth,
+    height: 55,
+    color: "#000",
+    border: 4,
+    radius: 3,
+    opacity: 0.3,
+    x: 0,
+    y: 3,
+    style: {marginBottom: 18}
+}
 
 export var titleHeader = "";
 export function ChangeTitleHeader(param) {
@@ -99,22 +121,26 @@ export function ButtonEmergency({ props, screen, name, textLabelSize = 18, style
     }
 
     return (
-        <TouchableOpacity                           /* Isso é um Botão que, quando tocado, perde opacidade */
-            style={[styles.buttonBox, styleExtra]}
-            onPress={() => {
-                ChangeSubVariable(buttonSubVar);
-                ChangeTitleHeader(titleHeader);
-                props.navigate(screen);
-            }}    /**Quando pressionado, chama a screen passada como parâmetro. Pode ser traduzida como => navigation.navigate('Subcategoria') */
-        >
-            <View style={{ flex: 3, paddingTop: 20 }}>
-                <Image
-                    style={styles.buttonEmergencyIcon}
-                    source={emergencyIcon}
-                />
-            </View>
-            <View style={{ flex: 2, justifyContent: "flex-end" }}><Text style={[styles.buttonBoxText, { fontSize: textLabelSize }]}>{name}</Text></View>
-        </TouchableOpacity>
+        <View style={styleExtra}>
+            <BoxShadow setting={shadowOptEmergency}>
+                <TouchableOpacity                           /* Isso é um Botão que, quando tocado, perde opacidade */
+                    style={styles.buttonBox}
+                    onPress={() => {
+                        ChangeSubVariable(buttonSubVar);
+                        ChangeTitleHeader(titleHeader);
+                        props.navigate(screen);
+                    }}    /**Quando pressionado, chama a screen passada como parâmetro. Pode ser traduzida como => navigation.navigate('Subcategoria') */
+                >
+                    <View style={{ flex: 3, paddingTop: 20 }}>
+                        <Image
+                            style={styles.buttonEmergencyIcon}
+                            source={emergencyIcon}
+                        />
+                    </View>
+                    <View style={{ flex: 2, justifyContent: "flex-end" }}><Text style={[styles.buttonBoxText, { fontSize: textLabelSize }]}>{name}</Text></View>
+                </TouchableOpacity>
+            </BoxShadow>
+        </View>
     );
 }
 
@@ -161,22 +187,24 @@ export function ButtonAprendizagem({ props, name, subVar = null }) {
     }
 
     return (
-        <TouchableOpacity
-            style={styles.buttonAp}
-            onPress={() => props.navigate('QuizContext')}
-        >
-            <View style={{ flex: 1, flexDirection: 'row', paddingVertical:10}}>
-                <View style={{ flex: 2 }}>
-                    <Image
-                        style={styles.buttonQuizIcon}
-                        source={quizIcon}
-                    />
+        <BoxShadow setting={shadowOptAprendizado}>
+            <TouchableOpacity
+                style={styles.buttonAp}
+                onPress={() => props.navigate('QuizContext')}
+            >
+                <View style={{ flex: 1, flexDirection: 'row', paddingVertical:10}}>
+                    <View style={{ flex: 2 }}>
+                        <Image
+                            style={styles.buttonQuizIcon}
+                            source={quizIcon}
+                        />
+                    </View>
+                    <View style={{ flex: 7, justifyContent: "center", marginTop:5}}>
+                        <Text style={styles.buttonBoxTextTeste}>{name}</Text>
+                    </View>
                 </View>
-                <View style={{ flex: 7, justifyContent: "center", marginTop:5}}>
-                    <Text style={styles.buttonBoxTextTeste}>{name}</Text>
-                </View>
-            </View>
-        </TouchableOpacity>
+            </TouchableOpacity>
+        </BoxShadow>
     );
 }
 
@@ -233,8 +261,10 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20
     },
     buttonInfoText: {
+        height:'100%',
         textAlign: 'right',
-        lineHeight: 20,
+        lineHeight: 19,
+        paddingTop: 9,
         fontSize: 19,
         fontFamily: 'Poppins-Regular',
         color: 'white'
@@ -252,8 +282,6 @@ const styles = StyleSheet.create({
         height: 0.39 * wWidth,                        /*NEED TEST RESPONSIVITY*/
         backgroundColor: "#AADAE5",     /**AADAE5 */
         borderRadius: 8,
-        marginBottom: 20,
-        elevation: 10,
         justifyContent: "flex-end"      /*MAKES TEXT AT THE BOTTOM' BOX*/
     },
     buttonEmergencyIcon: {
@@ -271,12 +299,10 @@ const styles = StyleSheet.create({
 
     /**BOTÃO DOS TESTES */
     buttonAp: {
-        width: '100%',
+        width: 0.85*wWidth,
         height: 55,
-        marginBottom: 18,
         backgroundColor: '#AADAE5',
         borderRadius: 3,
-        elevation: 10
     },
     buttonQuizIcon: {
         resizeMode: "contain",
