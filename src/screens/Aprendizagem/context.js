@@ -27,7 +27,7 @@ function QuizContext({ navigation }) {
                 </View>
                 <View style={{ justifyContent: "center" }} /**AJEITAR PERGUNTA QUE NÃO ESTÁ CENTRALIZADA */>
                     <Text style={{ fontSize: 16, fontFamily: 'Poppins-Regular', marginBottom: 15 }}>
-                        Uma criança de 7 anos estava com os pais na cozinha enquanto eles ferviam água para preparar o almoço. Durante um momento de distração, a criança derrubou a água quente no seu braço.
+                        Texto texto do CONTEXTO
                         </Text>
                 </View>
             </View>
