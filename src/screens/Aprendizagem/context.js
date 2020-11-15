@@ -4,16 +4,14 @@ import { wWidth } from '../../configs/dimensions';
 
 export function ButtonAgir({ props }) {
     return (
-        <View style={styles.buttonAlternative}>
             <TouchableOpacity
-                style={styles.buttonAlternative}
+                style={styles.buttonAgir}
                 onPress={() => props.navigate('Quiz')}
             >
-                <View style={styles.buttonAlternativeContainer}>
-                    <Text style={styles.buttonAlternativeText}>Agir</Text>
+                <View style={styles.buttonAgirContainer}>
+                    <Text style={styles.buttonAgirText}>Continuar</Text>
                 </View>
             </TouchableOpacity>
-        </View>
     );
 }
 
@@ -32,12 +30,12 @@ function QuizContext({ navigation }) {
                         Uma criança de 7 anos estava com os pais na cozinha enquanto eles ferviam água para preparar o almoço. Durante um momento de distração, a criança derrubou a água quente no seu braço.
                         </Text>
                 </View>
-
-                <View style={styles.containerAlternatives}>
-                    <ButtonAgir props={navigation} />
-                </View>
-
             </View>
+
+            <View style={styles.containerAlternatives}>
+                <ButtonAgir props={navigation} />
+            </View>
+
         </View>
     );
 }
@@ -50,45 +48,42 @@ const styles = StyleSheet.create({
         backgroundColor: '#F4FFFE'
     },
     container: {
-        flex: 1,
         alignSelf: "center",
         width: 0.84 * wWidth,
-        //backgroundColor: '#F68686'
+        // backgroundColor: '#F68686'
     },
     containerRobertinho: {
-        flex: 1,
-        //backgroundColor: '#8686F6',
-        maxHeight: '70%'
+        // backgroundColor: '#8686F6',
+        height: 200,
+        marginVertical: 25
     },
     robertinhoImage: {
         resizeMode: "contain",
         width: '100%',
         height: '100%',
-        marginTop: 10
     },
 
+
+    //Botão Continuar
     containerAlternatives: {
         flex: 1,
-        justifyContent: "flex-end",
-        marginBottom: 30,
+        justifyContent: "flex-end"
         //backgroundColor: '#F8F868'
     },
-
-    buttonAlternative: {
+    buttonAgir: {
         width: '100%',
-        height: 45,                        /*NEED TEST RESPONSIVITY*/
-        backgroundColor: "#AADAE5",     /**AADAE5 */
-        borderRadius: 40,
-        marginVertical: 4,
-        elevation: 8,
+        height: 65,                        /*NEED TEST RESPONSIVITY*/
+        backgroundColor: "#22CDCD",     /**AADAE5 */
         justifyContent: "center"
     },
-    buttonAlternativeContainer: {
+    buttonAgirContainer: {
         paddingHorizontal: '7%',
     },
-    buttonAlternativeText: {
+    buttonAgirText: {
         fontSize: 24,
-        fontFamily: 'Poppins-Regular',
-        textAlign:"center"
+        marginTop: 5,
+        fontFamily: 'Poppins-Bold',
+        color: 'white',
+        textAlign: "center"
     }
 })

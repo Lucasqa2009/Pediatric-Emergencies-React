@@ -5,9 +5,10 @@
 import 'react-native-gesture-handler';
 
 import React, { Component } from 'react';
-import { View, StyleSheet, Image, Text, StatusBar } from 'react-native';
+import { View, StyleSheet, Image, Text, StatusBar, TouchableOpacity } from 'react-native';
 Text.defaultProps = Text.defaultProps || {};
 Text.defaultProps.allowFontScaling = false;
+import { wWidth } from './src/configs/dimensions'
 
 /**Biblioteca de navegação. Container, Navegação em Stack e Navegação por abas inferiores */
 import { NavigationContainer } from '@react-navigation/native';
@@ -52,8 +53,6 @@ function HomeStackScreen() {
             iconPath = focused ? require("./assets/images/aprenderIcon.png") : require('./assets/images/aprenderIconInact.png')
           } else if (route.name === 'Aprendizagem') {
             iconPath = focused ? require("./assets/images/testeIcon.png") : require('./assets/images/testeIconInact.png')
-          } else if (route.name === 'Settings') {
-            iconPath = focused ? require("./assets/images/configIcon.png") : require("./assets/images/configIconInact.png")
           }
           return (
             <Image
@@ -86,15 +85,6 @@ function HomeStackScreen() {
           )
         }}
       />
-      <Tab.Screen
-        name="Settings"
-        component={Settings}
-        options={{
-          tabBarLabel: ({ focused }) => (
-            <Text style={focused ? styles.tabLabelActive : styles.tabLabelInactive}>Configurações</Text>
-          )
-        }}
-      />
     </Tab.Navigator>
   );
 }
@@ -108,7 +98,7 @@ export default class App extends Component {
         {/**Aqui abaixo ficam guardadas todas as telas de Stack, toda vez que for para trocar, é chamada pelo "name" em algum evento (botão, por ex.) */}
         <Stack.Navigator
           initialRouteName="HomeStack"
-          screenOptions={{
+          screenOptions={({ navigation }) => ({
             headerStyle: {
               backgroundColor: '#22CDCD',
               height: 55
@@ -122,14 +112,24 @@ export default class App extends Component {
               backgroundColor: "#F4FFFE"
             },
             animationEnabled: false,
+            headerRight: () => (
+              <TouchableOpacity onPress={() => { navigation.navigate("Settings") }}>
+                <View style={{ width: 33, height: 33, marginRight: 0.06 * wWidth }}>
+                  <Image
+                    style={{ resizeMode: "contain", width: '100%', height: '100%' }}
+                    source={require('./assets/images/configIcon.png')}
+                  />
+                </View>
+              </TouchableOpacity>
+            ),
             headerBackImage: () =>
-              <View style={{width:25, height:20}}>
+              <View style={{ width: 25, height: 20 }}>
                 <Image
-                  style={{ resizeMode: "contain", width:'100%', height:'100%'}}
+                  style={{ resizeMode: "contain", width: '100%', height: '100%' }}
                   source={require('./assets/images/backImage.png')}
                 />
               </View>
-          }}
+          })}
         >
           <Stack.Screen
             name="HomeStack"
@@ -143,9 +143,19 @@ export default class App extends Component {
             }}
           />
           <Stack.Screen
+            name="Settings"
+            component={Settings}
+            options={{
+              headerTitleAlign: "center",
+              title: "CONFIGURAÇÕES",
+              headerRight: null
+            }}
+          />
+          <Stack.Screen
             name="PassoAPasso"
             component={PassoAPasso}
             options={{
+              headerRight: null,
               headerTitleAlign: "center",
               headerTitle: (props) => (
                 <View style={styles.headerTitleContainerCSS}>
@@ -162,6 +172,7 @@ export default class App extends Component {
             name="Subcategoria"
             component={Subcategoria}
             options={{
+              headerRight: null,
               headerTitleAlign: "center",
               headerTitle: (props) => (
                 <View style={styles.headerTitleContainerCSS}>
@@ -191,11 +202,12 @@ export default class App extends Component {
           />
           <Stack.Screen name="QuizContext" component={QuizContext} options={{ headerTitleAlign: "center", title: "Contexto" }} />
           <Stack.Screen name="Quiz" component={Quiz} options={{ headerTitleAlign: "center" }} />
-          <Stack.Screen name="WinQuiz" component={WinQuiz} options={{ headerTitleAlign: "center", title: "Resultado", headerLeft: null }} />
+          <Stack.Screen name="WinQuiz" component={WinQuiz} options={{headerRight: null, headerTitleAlign: "center", title: "Resultado", headerLeft: null }} />
           <Stack.Screen
             name="Infos"
             component={Infos}
             options={{
+              headerRight: null,
               headerTitleAlign: "center",
               headerTitle: (props) => (
                 <View style={styles.headerTitleContainerCSS}>
@@ -209,6 +221,7 @@ export default class App extends Component {
             name="Sobre"
             component={Sobre}
             options={{
+              headerRight: null,
               headerTitleAlign: "center",
               headerTitle: (props) => (
                 <View style={styles.headerTitleContainerCSS}>

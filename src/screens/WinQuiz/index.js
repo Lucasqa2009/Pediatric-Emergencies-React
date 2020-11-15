@@ -21,14 +21,12 @@ function WinQuiz({ navigation }) {
                     Você acertou corretamente todos os procedimentos! Continue praticando!
                 </Text>
             </View>
-            <View style={styles.scoreContainer}>
-                <Text style={{ textAlign: "center", fontFamily: 'Poppins-Regular', fontSize: 24 }}>4/4</Text>
-            </View>
             <View style={{ }}>
-                <Text style={{ textAlign: "center", fontFamily: 'Poppins-Regular', fontSize: 22 }}>
-                    Respostas
+                <Text style={{ textAlign: "center", fontFamily: 'Poppins-Bold', fontSize: 22 }}>
+                    Respostas corretas
                 </Text>
             </View>
+                <Text style={{ textAlign: "center", fontFamily: 'Poppins-Bold', fontSize: 30 }}>4/4</Text>
             <TouchableOpacity 
             style={{ alignSelf: "center", justifyContent: "center", width: 60, height: 60, borderRadius: 30, backgroundColor: "#AADAE5", elevation:10, marginTop:25 }}
             onPress={() => navigation.navigate('HomeStack')}

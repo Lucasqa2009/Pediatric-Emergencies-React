@@ -7,7 +7,7 @@ import { TitleInformative } from '../../components';
 function Infos() {
     return (
         <View style={styles.container}>
-            <View style={{ flex: 1, marginTop: 40, width: '90%' }}        /**Limita o tamanho da ScrollView */>
+            <View style={{ flex: 1, marginTop: 25, width: '90%' }}        /**Limita o tamanho da ScrollView */>
                 <ScrollView
                     /**Uma ScrollView precisa de um estilo de conteúdo e um estilo pro container*/
                     contentContainerStyle={styles.containerCategoryScroll}
