@@ -4,10 +4,9 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 import { wWidth } from '../../configs/dimensions'
-import { ChangeStepPCR, contentArray, ChangeTextArray, photoArray, ImageStep } from '../../components/EmergencyStepsControl'
+import { ChangeStepPCR, contentArray, ChangeTextArray, ImageStep } from '../../components/EmergencyStepsControl'
 
 import { CommonActions } from '@react-navigation/native';
-import { HeaderBackButton } from '@react-navigation/stack';
 import { ChangeSubVariable } from '../SubCategoria/changeSubs'
 import { titleHeader } from '../../components'
 

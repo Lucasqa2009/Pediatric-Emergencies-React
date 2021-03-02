@@ -1,0 +1,22 @@
+{
+    "pcr":[
+        [
+            {"alternative":"pcr1: alt 1", "answer": false},
+            {"alternative":"pcr1: alt 2", "answer": false},
+            {"alternative":"pcr1: alt 3", "answer": true},
+            {"alternative":"pcr1: alt 4", "answer": false}
+        ],
+        [
+            {"alternative":"pcr2: alt 1", "answer": false},
+            {"alternative":"pcr2: alt 2", "answer": false},
+            {"alternative":"pcr2: alt 3", "answer": true},
+            {"alternative":"pcr2: alt 4", "answer": false}
+        ],
+        [
+            {"alternative":"pcr3: alt 1", "answer": false},
+            {"alternative":"pcr3: alt 2", "answer": false},
+            {"alternative":"pcr3: alt 3", "answer": true},
+            {"alternative":"pcr3: alt 4", "answer": false}
+        ]
+    ]
+}

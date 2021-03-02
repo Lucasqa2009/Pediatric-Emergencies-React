@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { wWidth } from '../../configs/dimensions';
+
+
 
 import { BoxShadow } from 'react-native-shadow';
 const shadowOptAprendizado = {
@@ -15,7 +17,11 @@ const shadowOptAprendizado = {
     style: {marginBottom: 16}
 }
 
-export function ButtonAlternativa({ props, alternative }) {
+import {contentArrayQuestion, contentArrayAlternatives, showAlternative} from '../../components/ChangeQuizTexts.js';
+
+
+
+export function ButtonAlternativa({ props, isTrue, alternative }) {
     return (
         <BoxShadow setting={shadowOptAprendizado}>
             <View style={styles.buttonAlternative}>
@@ -47,6 +53,7 @@ export function ButtonAgir({ props }) {
 
 /**Mesmo funcionamento da Home, só muda um pouco o CSS */
 function Quiz({ navigation }) {
+
     return (
         <View style={styles.page}>
             <View style={styles.container}>
@@ -54,17 +61,17 @@ function Quiz({ navigation }) {
                     <Text style={{ fontFamily: 'Poppins-Regular', fontSize: 15, marginTop: 26, marginBottom: 5 }}>Questão 1 / 5</Text>
                     <View style={{ justifyContent: "center" }}>
                         <Text style={{ fontSize: 17, fontFamily: 'Poppins-Regular', marginBottom: 15 }}>
-                            Enquanto um dos alunos ligava para o SAMU, outro verificou que a criança não estava respirando e decidiu começar as manobras de reanimação, chamando o professor para ajudar. Como eles devem realizar a reanimação?
+                            {contentArrayQuestion[1]}
 
                         </Text>
                     </View>
                 </View>
 
                 <View style={styles.containerAlternatives}>
-                    <ButtonAlternativa props={navigation} alternative="Retirar acessórios, perto do ferimento, e roupa, próxima da queimadura, mas que não está aderida à pele. " />
-                    <ButtonAlternativa props={navigation} alternative="Passar pomada na queimadura" />
-                    <ButtonAlternativa props={navigation} alternative="Levar a criança para o médico" />
-                    <ButtonAlternativa props={navigation} alternative="Manter o local da lesão em repouso" />
+                    <ButtonAlternativa props={navigation} alternative={contentArrayAlternatives[0][0].alternative} isTrue ={contentArrayAlternatives[0][0].answer}/>
+                    <ButtonAlternativa props={navigation} alternative={contentArrayAlternatives[0][1].alternative}  isTrue ={contentArrayAlternatives[0][1].answer}/>
+                    <ButtonAlternativa props={navigation} alternative={contentArrayAlternatives[0][2].alternative}  isTrue ={contentArrayAlternatives[0][2].answer}/>
+                    <ButtonAlternativa props={navigation} alternative={contentArrayAlternatives[0][3].alternative}  isTrue ={contentArrayAlternatives[0][3].answer}/>
                 </View>
 
             </View>
@@ -126,7 +133,7 @@ const styles = StyleSheet.create({
     buttonAgir: {
         width: '100%',
         height: 65,                        /*NEED TEST RESPONSIVITY*/
-        backgroundColor: "#22CDCD",     /**AADAE5 */
+        backgroundColor: "#CDCDCD",     /**22CDCD */
         justifyContent: "center"
     },
     buttonAgirContainer: {

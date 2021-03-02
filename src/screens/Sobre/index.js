@@ -15,6 +15,13 @@ function Sobre() {
                         <Text style={[styles.textStyle, { color: "#7D0C0C", fontFamily: 'Poppins-Bold' }]}>Este aplicativo disponibiliza orientações básicas sobre primeiros socorros pediátricos, mas não substitui o atendimento profissional. </Text>
                     </View>
 
+                    <TitleInformative name="Colaboradores" />
+
+                    <View style={{ marginBottom: 30 }}>
+                       <View style={{ marginBottom: 30 }}><Text style={styles.textStyle}>Programa de Educação em Reanimação Cardiorrespiratória (PERC):</Text></View>
+                        <Text style={styles.textStyle}>É um programa de ensino, pesquisa e extensão do curso de medicina da Universidade Federal do Ceará</Text>
+                    </View>
+
                     <TitleInformative name="Desenvolvedores" />
 
                     <View style={{ marginBottom: 30 }}>
@@ -32,7 +39,7 @@ function Sobre() {
                     <TitleInformative name="Orientadores" />
 
                     <View style={{ marginBottom: 30}}>
-                        <Text style={styles.textStyle}>Professores do cuso de Sistemas e Mídias Digitais da Universidade Federal do Ceará:
+                        <Text style={styles.textStyle}>Professores do curso de Sistemas e Mídias Digitais da Universidade Federal do Ceará:
                         </Text>
                     </View>
                     <View style={{ marginBottom: 30 }}>
@@ -45,13 +52,6 @@ function Sobre() {
                     <View style={{ marginBottom: 30}}>
                         <Text style={styles.textStyle}>Orientadora pediatra:</Text>
                         <Text style={styles.textStyle}>• Dra. Virna Costa e Silva</Text>
-                    </View>
-
-                    <TitleInformative name="PERC" />
-
-                    <View style={{ marginBottom: 30 }}>
-                        <Text style={[styles.textStyle, {fontFamily:'Poppins-Bold'}]}>Programa de Educação em Reanimação Cardiorrespiratória (PERC)</Text>
-                        <Text style={styles.textStyle}>É um programa de ensino, pesquisa e extensão do curso de medicina da Universidade Federal do Ceará</Text>
                     </View>
 
                 </ScrollView>
