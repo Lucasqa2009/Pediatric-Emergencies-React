@@ -17,16 +17,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 /**Importando as funções com "export default" das respectivas telas */
 import Home from './src/screens/Home';
-import AprenderScreen from './src/screens/Aprendizagem';
 import Settings from './src/screens/Settings';
 import Subcategoria from './src/screens/SubCategoria';
 import PassoAPasso from './src/screens/PassoaPasso';
-import QuizContext from './src/screens/Aprendizagem/context';
-import Quiz from './src/screens/Quiz';
-import WinQuiz from './src/screens/WinQuiz';
 import Infos from './src/screens/Infos';
 import Sobre from './src/screens/Sobre';
-import Politics from './src/screens/Politics';
 
 import { ShowTitlePaP } from './src/components/index'
 import { subVariable } from './src/screens/SubCategoria/changeSubs'
@@ -43,7 +38,7 @@ export default class App extends Component {
         <StatusBar backgroundColor="#22CDCD" barStyle="light-content" />
         {/**Aqui abaixo ficam guardadas todas as telas de Stack, toda vez que for para trocar, é chamada pelo "name" em algum evento (botão, por ex.) */}
         <Stack.Navigator
-          initialRouteName="HomeStack"
+          initialRouteName="Home"
           screenOptions={({ navigation }) => ({
             headerStyle: {
               backgroundColor: '#22CDCD',
@@ -75,7 +70,7 @@ export default class App extends Component {
           })}
         >
           <Stack.Screen
-            name="HomeStack"
+            name="Home"
             component={Home}
             options={{
               headerTitle: (props) => (
@@ -143,9 +138,6 @@ export default class App extends Component {
             }}
             mode="modal"
           />
-          <Stack.Screen name="QuizContext" component={QuizContext} options={{ headerTitleAlign: "center", title: "Contexto" }} />
-          <Stack.Screen name="Quiz" component={Quiz} options={{ headerTitleAlign: "center" }} />
-          <Stack.Screen name="WinQuiz" component={WinQuiz} options={{headerRight: null, headerTitleAlign: "center", title: "Resultado", headerLeft: null }} />
           <Stack.Screen
             name="Infos"
             component={Infos}
@@ -159,7 +151,6 @@ export default class App extends Component {
               ),
             }}
           />
-          <Stack.Screen name="Politics" component={Politics} options={{ headerTitleAlign: "center" }} />
           <Stack.Screen
             name="Sobre"
             component={Sobre}

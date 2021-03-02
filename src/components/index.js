@@ -99,56 +99,6 @@ export function ButtonEmergency({ props, screen, name, textLabelSize = 18, style
     );
 }
 
-export function ButtonAprendizagem({ props, name, subVar = null }) {
-    let quizIcon;
-
-    switch (subVar) {
-        case 'pcr':
-            quizIcon = require('../../assets/images/EmergencyIcons/pcrIcon.png')
-            break;
-        case 'engasgo':
-            quizIcon = require('../../assets/images/EmergencyIcons/engasgoIcon.png')
-            break;
-        case 'queimadura':
-            quizIcon = require('../../assets/images/EmergencyIcons/queimadurasIcon.png')
-            break;
-        case 'queda':
-            quizIcon = require('../../assets/images/EmergencyIcons/quedaIcon.png')
-            break;
-        case 'afogamento':
-            quizIcon = require('../../assets/images/EmergencyIcons/afogamentoIcon.png')
-            break;
-        case 'choque':
-            quizIcon = require('../../assets/images/EmergencyIcons/choqueIcon.png')
-            break;
-
-
-        default:
-            break;
-    }
-
-    return (
-        <BoxShadow setting={shadowOptAprendizado}>
-            <TouchableOpacity
-                style={styles.buttonAp}
-                onPress={() => props.navigate('QuizContext')}
-            >
-                <View style={{ flex: 1, flexDirection: 'row', paddingVertical: 10 }}>
-                    <View style={{ flex: 2 }}>
-                        <Image
-                            style={styles.buttonQuizIcon}
-                            source={quizIcon}
-                        />
-                    </View>
-                    <View style={{ flex: 7, justifyContent: "center", marginTop: 5 }}>
-                        <Text style={styles.buttonBoxTextTeste}>{name}</Text>
-                    </View>
-                </View>
-            </TouchableOpacity>
-        </BoxShadow>
-    );
-}
-
 /**Botão quadrado (usado no Subcategoria) */
 export function ButtonSubCategory({ props, screen, name, textLabelSize = 18, buttonSubVar = null, titleHeader = "" }) {
 
