@@ -18,8 +18,17 @@ function Sobre() {
                     <TitleInformative name="Colaboradores" />
 
                     <View style={{ marginBottom: 30 }}>
-                       <View style={{ marginBottom: 30 }}><Text style={styles.textStyle}>Programa de Educação em Reanimação Cardiorrespiratória (PERC):</Text></View>
-                        <Text style={styles.textStyle}>É um programa de ensino, pesquisa e extensão do curso de medicina da Universidade Federal do Ceará</Text>
+                           <Text style={[styles.textStyle, {fontFamily: 'Poppins-Bold'}]}>Programa de Educação em Reanimação Cardiorrespiratória (PERC):</Text>
+                        <View style={{ marginBottom: 30 }}>
+                            <Text style={styles.textStyle}>É um programa de ensino, pesquisa e extensão do curso de medicina da Universidade Federal do Ceará</Text>
+                        </ View>
+                        <Text style={styles.textStyle}>• Gabriel Coelho Brito Dias</Text>
+                        <Text style={styles.textStyle}>• Helena Raquel Nogueira de Oliveira</Text>
+                        <Text style={styles.textStyle}>• Isabela Aragão Colares</Text>
+                        <Text style={styles.textStyle}>• José Levi Tavares Cavalcante</Text>
+                        <Text style={styles.textStyle}>• José Roberto Gomes Francilino Filho</Text>
+                        <Text style={styles.textStyle}>• Maria Beatriz Sales Lima</Text>
+                        <Text style={styles.textStyle}>• Mariana Salles Ballalai</Text>
                     </View>
 
                     <TitleInformative name="Desenvolvedores" />
@@ -53,7 +62,9 @@ function Sobre() {
                         <Text style={styles.textStyle}>Orientadora pediatra:</Text>
                         <Text style={styles.textStyle}>• Dra. Virna Costa e Silva</Text>
                     </View>
-
+                    <View style={{ marginBottom: 30}}>
+                        <Text style={{fontFamily: 'Poppins-Regular', fontSize:14}}>O aplicativo Emergências Pediátricas não coleta nenhum dado ou informações dos usuários.</Text>
+                    </View>
                 </ScrollView>
             </View>
 

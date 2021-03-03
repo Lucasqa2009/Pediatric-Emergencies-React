@@ -17,7 +17,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 /**Importando as funções com "export default" das respectivas telas */
 import Home from './src/screens/Home';
-import Settings from './src/screens/Settings';
 import Subcategoria from './src/screens/SubCategoria';
 import PassoAPasso from './src/screens/PassoaPasso';
 import Infos from './src/screens/Infos';
@@ -78,15 +77,6 @@ export default class App extends Component {
                   <Image style={{ resizeMode: "contain", width: '80%', height: '80%' }} source={require('./assets/images/LOGO.png')} />
                 </View>
               )
-            }}
-          />
-          <Stack.Screen
-            name="Settings"
-            component={Settings}
-            options={{
-              headerTitleAlign: "center",
-              title: "CONFIGURAÇÕES",
-              headerRight: null
             }}
           />
           <Stack.Screen
